@@ -12,6 +12,9 @@ import androidx.core.content.ContextCompat;
 import android.widget.DatePicker;
 import java.util.Calendar;
 import android.widget.Button;
+import android.app.Application;
+import android.graphics.Typeface;
+import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,5 +34,18 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
+        setDefaultFont();
+    }
+
+    private void setDefaultFont() {
+        try {
+            final Typeface inter = Typeface.createFromAsset(getAssets(), "fonts/inter_regular.ttf");
+            final Field defaultFontTypefaceField = Typeface.class.getDeclaredField("SERIF");
+            defaultFontTypefaceField.setAccessible(true);
+            defaultFontTypefaceField.set(null, inter);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
