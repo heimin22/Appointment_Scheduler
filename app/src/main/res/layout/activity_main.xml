@@ -122,15 +122,35 @@
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/homeBar"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:id="@+id/navBar"
+        android:layout_width="493dp"
+        android:layout_height="124dp"
         android:layout_marginTop="841dp"
         app:cardBackgroundColor="#BBDEFB"
+        app:cardCornerRadius="30dp"
+        app:cardMaxElevation="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#BBDEFB"
+            android:paddingBottom="10dp"
+            android:src="@drawable/add" />
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#BBDEFB"
+            android:src="@drawable/home" />
+
+
 
     </androidx.cardview.widget.CardView>
 
