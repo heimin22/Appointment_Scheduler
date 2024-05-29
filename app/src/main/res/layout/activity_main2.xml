@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="96dp"
+        android:layout_height="@dimen/_70sdp"
         android:layout_marginBottom="850dp"
         app:cardBackgroundColor="#BBDEFB"
         app:cardElevation="30dp"
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/_28sdp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="New Appointment"
                 android:textColor="#000000"
