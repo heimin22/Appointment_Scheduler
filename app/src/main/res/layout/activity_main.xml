@@ -135,20 +135,31 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/addButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:backgroundTint="#BBDEFB"
             android:paddingBottom="10dp"
             android:src="@drawable/add" />
 
         <ImageButton
+            android:id="@+id/homeButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="#BBDEFB"
             android:src="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile"
+            android:backgroundTint="#BBDEFB"
+            android:layout_marginLeft="345dp"
+            android:layout_marginTop="32dp"/>
 
 
 
