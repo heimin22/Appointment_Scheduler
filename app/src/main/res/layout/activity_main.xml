@@ -95,7 +95,7 @@
 
         <GridLayout
             android:layout_width="311dp"
-            android:layout_height="200dp"
+            android:layout_height="210dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:columnCount="7"
@@ -111,7 +111,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:text="SUN" />
 
             <TextView
@@ -123,7 +123,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:text="MON" />
 
             <TextView
@@ -135,7 +135,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:text="TUE" />
 
             <TextView
@@ -147,7 +147,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:text="WED" />
 
             <TextView
@@ -159,7 +159,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:text="THU" />
 
             <TextView
@@ -171,7 +171,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:text="FRI" />
 
             <TextView
@@ -183,7 +183,7 @@
                 android:paddingRight="20dp"
                 android:textColor="#2196F3"
                 android:textSize="13dp"
-                android:fontFamily="@font/inter_regular"
+                android:fontFamily="@font/inter_semibold    "
                 android:text="SAT" />
 
             <TextView
@@ -191,7 +191,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp"
+                android:paddingTop="13dp"
                 android:textSize="18dp"
                 android:layout_row="1"
                 android:layout_column="2"
@@ -206,7 +206,7 @@
                 android:layout_row="1"
                 android:layout_column="3"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -219,7 +219,7 @@
                 android:layout_row="1"
                 android:layout_column="4"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:text="3" />
@@ -231,7 +231,7 @@
                 android:layout_row="1"
                 android:layout_column="5"
                 android:paddingLeft="5dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -244,7 +244,7 @@
                 android:layout_row="1"
                 android:layout_column="6"
                 android:paddingLeft="5dp"
-                android:paddingTop="3dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -257,7 +257,7 @@
                 android:layout_row="2"
                 android:layout_column="0"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp"
+                android:paddingTop="13dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -271,7 +271,7 @@
                 android:layout_row="2"
                 android:layout_column="2"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -284,7 +284,7 @@
                 android:layout_row="2"
                 android:layout_column="3"
                 android:paddingLeft="10dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -297,7 +297,7 @@
                 android:layout_row="2"
                 android:layout_column="4"
                 android:paddingLeft="5dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
@@ -305,12 +305,12 @@
 
             <ImageView
                 android:id="@+id/seven"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_row="2"
                 android:layout_column="1"
-                android:paddingTop="7dp"
-                android:paddingLeft="2dp"
+                android:paddingTop="13dp"
+                android:paddingLeft="-8dp"
                 app:srcCompat="@drawable/seven" />
 
             <TextView
@@ -320,64 +320,259 @@
                 android:layout_row="2"
                 android:layout_column="5"
                 android:paddingLeft="3dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
                 android:text="11" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/twelve"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="6"
                 android:paddingLeft="1dp"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:textSize="18dp"
                 android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
                 android:text="12" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/thirteen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="0"
-                android:text="TextView" />
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="13" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/fourteen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="1"
-                android:text="TextView" />
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="14" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/fifteen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="2"
-                android:text="TextView" />
+                android:paddingLeft="5dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="15" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/sixteen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="3"
-                android:text="TextView" />
+                android:paddingLeft="5dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="16" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/seventeen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="4"
-                android:text="TextView" />
+                android:paddingLeft="6dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="17" />
+
+            <TextView
+                android:id="@+id/eighteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="5"
+                android:paddingLeft="3dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="18" />
+
+            <TextView
+                android:id="@+id/nineteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="6"
+                android:paddingLeft="1dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="19" />
+
+            <TextView
+                android:id="@+id/twenty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:paddingLeft="4dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="20" />
+
+            <TextView
+                android:id="@+id/twentyOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="21" />
+
+            <TextView
+                android:id="@+id/twentyTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="2"
+                android:paddingLeft="4dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="22" />
+
+            <TextView
+                android:id="@+id/twentyThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="3"
+                android:paddingLeft="4dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="23" />
+
+            <TextView
+                android:id="@+id/twentyFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="4"
+                android:paddingLeft="4dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="24" />
+
+            <TextView
+                android:id="@+id/twentyFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="5"
+                android:paddingLeft="1dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="25" />
+
+            <TextView
+                android:id="@+id/twentySix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="6"
+                android:paddingLeft="-1dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="26" />
+
+            <TextView
+                android:id="@+id/twentySeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:paddingLeft="4dp"
+                android:paddingTop="13dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="27" />
+
+            <TextView
+                android:id="@+id/twentyEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_column="1"
+                android:paddingLeft="4dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="28" />
+
+            <TextView
+                android:id="@+id/twentyNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_column="2"
+                android:paddingLeft="3dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="29" />
+
+            <TextView
+                android:id="@+id/thirty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_column="3"
+                android:paddingLeft="4dp"
+                android:paddingTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/inter_regular"
+                android:text="30" />
+
 
 
         </GridLayout>
@@ -404,10 +599,67 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#F8F9FA"
-            app:cardCornerRadius="30dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="30dp"
             tools:layout_editor_absoluteX="21dp"
             tools:layout_editor_absoluteY="486dp">
+
+
+            <TextView
+                android:id="@+id/scheduleName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="19dp"
+                android:text="Name" />
+
+
+            <TextView
+                android:id="@+id/descriptionSample1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="#000000"
+                android:layout_marginTop="48dp"
+                android:layout_marginStart="45dp"
+                android:textSize="12dp"
+                android:text="Description: Sample" />
+
+            <TextView
+                android:id="@+id/meetingLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="19dp"
+                android:textSize="12dp"
+                android:text="Meeting Link:" />
+
+            <TextView
+                android:id="@+id/realLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#42A5F5"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="98dp"
+                android:textSize="12dp"
+                android:text="https://www.sampleappointment.com" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="290dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="00:00" />
 
 
         </androidx.cardview.widget.CardView>
@@ -419,10 +671,66 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#F8F9FA"
-            app:cardCornerRadius="30dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="30dp"
             tools:layout_editor_absoluteX="21dp"
             tools:layout_editor_absoluteY="627dp">
+
+            <TextView
+                android:id="@+id/scheduleName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="19dp"
+                android:text="Name" />
+
+
+            <TextView
+                android:id="@+id/descriptionSample2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="#000000"
+                android:layout_marginTop="48dp"
+                android:layout_marginStart="45dp"
+                android:textSize="12dp"
+                android:text="Description: Sample" />
+
+            <TextView
+                android:id="@+id/meetingLink2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="19dp"
+                android:textSize="12dp"
+                android:text="Meeting Link:" />
+
+            <TextView
+                android:id="@+id/realLink2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#42A5F5"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="98dp"
+                android:textSize="12dp"
+                android:text="https://www.sampleappointment.com" />
+
+            <TextView
+                android:id="@+id/time2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="290dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="00:00" />
 
 
         </androidx.cardview.widget.CardView>
@@ -434,10 +742,65 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#F8F9FA"
-            app:cardCornerRadius="30dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="30dp"
             tools:layout_editor_absoluteX="21dp"
             tools:layout_editor_absoluteY="770dp">
+
+            <TextView
+                android:id="@+id/scheduleName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="19dp"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/descriptionSample3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="#000000"
+                android:layout_marginTop="48dp"
+                android:layout_marginStart="45dp"
+                android:textSize="12dp"
+                android:text="Description: Sample" />
+
+            <TextView
+                android:id="@+id/meetingLink3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="19dp"
+                android:textSize="12dp"
+                android:text="Meeting Link:" />
+
+            <TextView
+                android:id="@+id/realLink3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#42A5F5"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="98dp"
+                android:textSize="12dp"
+                android:text="https://www.sampleappointment.com" />
+
+            <TextView
+                android:id="@+id/time3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="290dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="00:00" />
 
         </androidx.cardview.widget.CardView>
 
