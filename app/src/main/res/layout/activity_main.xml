@@ -676,6 +676,62 @@
             tools:layout_editor_absoluteX="21dp"
             tools:layout_editor_absoluteY="627dp">
 
+            <TextView
+                android:id="@+id/scheduleName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="19dp"
+                android:text="Name" />
+
+
+            <TextView
+                android:id="@+id/descriptionSample2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="#000000"
+                android:layout_marginTop="48dp"
+                android:layout_marginStart="45dp"
+                android:textSize="12dp"
+                android:text="Description: Sample" />
+
+            <TextView
+                android:id="@+id/meetingLink2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="19dp"
+                android:textSize="12dp"
+                android:text="Meeting Link:" />
+
+            <TextView
+                android:id="@+id/realLink2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#42A5F5"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="98dp"
+                android:textSize="12dp"
+                android:text="https://www.sampleappointment.com" />
+
+            <TextView
+                android:id="@+id/time2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="290dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="00:00" />
+
 
         </androidx.cardview.widget.CardView>
 
@@ -690,6 +746,61 @@
             app:cardElevation="30dp"
             tools:layout_editor_absoluteX="21dp"
             tools:layout_editor_absoluteY="770dp">
+
+            <TextView
+                android:id="@+id/scheduleName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="19dp"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/descriptionSample3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="#000000"
+                android:layout_marginTop="48dp"
+                android:layout_marginStart="45dp"
+                android:textSize="12dp"
+                android:text="Description: Sample" />
+
+            <TextView
+                android:id="@+id/meetingLink3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="19dp"
+                android:textSize="12dp"
+                android:text="Meeting Link:" />
+
+            <TextView
+                android:id="@+id/realLink3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#42A5F5"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="98dp"
+                android:textSize="12dp"
+                android:text="https://www.sampleappointment.com" />
+
+            <TextView
+                android:id="@+id/time3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="290dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="00:00" />
 
         </androidx.cardview.widget.CardView>
 
