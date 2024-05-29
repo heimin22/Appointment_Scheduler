@@ -37,7 +37,7 @@
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#BBDEFB"
@@ -50,8 +50,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="405dp"
-        android:layout_height="82dp"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_gravity="center"
         android:layout_marginStart="27dp"
         android:layout_marginTop="830dp"
@@ -81,7 +81,7 @@
                 android:fontFamily="@font/inter_medium"
                 android:textColor="#0D47A1"
                 android:textSize="23dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/_13sdp"
                 android:text="SET APPOINTMENT" />
         </LinearLayout>
 

@@ -8,11 +8,13 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.lang.reflect.Field;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    private ImageButton backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,8 @@ public class MainActivity2 extends AppCompatActivity {
 
         setDefaultFont();
 
+
+        backButton = findViewById(R.id.backButton);
     }
 
     private void setDefaultFont() {
