@@ -5,5 +5,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9AFA"
+    android:backgroundTint="#F8F9FA"
     tools:context=".MainActivity"/>
