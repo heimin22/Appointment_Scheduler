@@ -1,5 +1,7 @@
 package com.example.appointmentscheduler;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ConstraintLayout main_layout = findViewById(R.id.main_layout);
-
-
+        main_layout.setBackgroundColor(Color.parseColor("#F8F9FA"));
 
     }
 }
