@@ -45,8 +45,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/calendarContainer"
-        android:layout_width="372dp"
-        android:layout_height="302dp"
+        android:layout_width="@dimen/_235sdp"
+        android:layout_height="@dimen/_200sdp"
         android:layout_gravity="center"
         android:layout_marginStart="19dp"
         android:layout_marginTop="137dp"
@@ -583,8 +583,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="663dp"
-        android:layout_marginTop="484dp"
+        android:layout_height="@dimen/_600sdp"
+        android:layout_marginTop="@dimen/_330sdp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
