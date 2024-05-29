@@ -830,10 +830,10 @@
 
         <ImageButton
             android:id="@+id/homeButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#BBDEFB"
             android:src="@drawable/home" />
 
