@@ -12,11 +12,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="96dp"
+        android:layout_height="@dimen/_70sdp"
         android:layout_gravity="center"
         android:layout_marginBottom="850dp"
         app:cardBackgroundColor="#BBDEFB"
-        app:cardElevation="30dp"
+        app:cardElevation="@dimen/_30sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +27,8 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingStart="55dp"
-            android:paddingEnd="18dp">
+            android:paddingStart="@dimen/_34sdp"
+            android:paddingEnd="@dimen/_18sdp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -808,8 +808,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/navBar"
-        android:layout_width="493dp"
-        android:layout_height="124dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
         android:layout_marginTop="841dp"
         app:cardBackgroundColor="#BBDEFB"
         app:cardCornerRadius="30dp"
@@ -832,8 +832,8 @@
             android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="83dp"
-            android:layout_marginTop="33dp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:backgroundTint="#BBDEFB"
             android:src="@drawable/home" />
 
@@ -843,8 +843,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/profile"
             android:backgroundTint="#BBDEFB"
-            android:layout_marginLeft="345dp"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginLeft="@dimen/_216sdp"
+            android:layout_marginTop="@dimen/_20sdp"/>
 
 
 
