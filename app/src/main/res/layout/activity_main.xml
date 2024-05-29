@@ -832,8 +832,8 @@
             android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="83dp"
+            android:layout_marginTop="33dp"
             android:backgroundTint="#BBDEFB"
             android:src="@drawable/home" />
 
