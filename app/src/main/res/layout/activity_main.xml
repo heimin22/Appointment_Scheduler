@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingStart="60dp"
+            android:paddingStart="55dp"
             android:paddingEnd="18dp">
 
             <TextView
@@ -63,58 +63,62 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-        android:layout_width="390dp"
-        android:layout_height="560dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="663dp"
+        android:layout_marginTop="485dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="466dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/schedule1"
-                android:layout_width="369dp"
-                android:layout_height="132dp"
-                app:cardBackgroundColor="#F8F9FA"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="30dp"
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="666dp">
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/schedule2"
-                android:layout_width="369dp"
-                android:layout_height="132dp"
-                app:cardBackgroundColor="#F8F9FA"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="30dp"
-                tools:layout_editor_absoluteX="22dp"
-                tools:layout_editor_absoluteY="511dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/schedule1"
+            android:layout_width="369dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#F8F9FA"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="30dp"
+            tools:layout_editor_absoluteX="21dp"
+            tools:layout_editor_absoluteY="486dp">
 
 
-            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/schedule3"
-                android:layout_width="match_parent"
-                android:layout_height="283dp"
-                app:cardBackgroundColor="#F8F9FA"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="30dp"
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="823dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/schedule2"
+            android:layout_width="369dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#F8F9FA"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="30dp"
+            tools:layout_editor_absoluteX="21dp"
+            tools:layout_editor_absoluteY="627dp">
 
-            </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    </ScrollView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/schedule3"
+            android:layout_width="369dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#F8F9FA"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="30dp"
+            tools:layout_editor_absoluteX="21dp"
+            tools:layout_editor_absoluteY="770dp">
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
