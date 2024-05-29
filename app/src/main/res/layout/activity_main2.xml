@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
         android:layout_marginBottom="850dp"
         app:cardBackgroundColor="#BBDEFB"
         app:cardElevation="30dp"
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="New Appointment"
                 android:textColor="#000000"
@@ -40,13 +40,100 @@
                 android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#BBDEFB"
-                android:layout_marginTop="-30dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="-30dp"
+                android:backgroundTint="#BBDEFB"
                 app:srcCompat="@drawable/chevron_backward" />
 
 
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="743dp"
+        app:cardBackgroundColor="#f8f9fa"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Name:"
+            android:textColor="#969696"
+            android:textSize="@dimen/_12sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="656dp"
+        app:cardBackgroundColor="#f8f9fa"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Date: MM-DD-YYYY"
+            android:textColor="#969696"
+            android:textSize="@dimen/_12sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="484dp"
+        app:cardBackgroundColor="#f8f9fa"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Description:"
+            android:textColor="#969696"
+            android:textSize="@dimen/_12sdp" />
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -78,14 +165,99 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/inter_medium"
-                android:textColor="#0D47A1"
-                android:textSize="23dp"
                 android:layout_marginTop="@dimen/_13sdp"
-                android:text="SET APPOINTMENT" />
+                android:fontFamily="@font/inter_medium"
+                android:text="SET APPOINTMENT"
+                android:textColor="#0D47A1"
+                android:textSize="23dp" />
         </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="496dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="391dp"
+        app:cardBackgroundColor="#f8f9fa"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/timeSched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Time:"
+            android:textColor="#969696"
+            android:textSize="@dimen/_12sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="585dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="302dp"
+        app:cardBackgroundColor="#f8f9fa"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/links"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Links:"
+            android:textColor="#969696"
+            android:textSize="@dimen/_12sdp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="672dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="177dp"
+        app:cardBackgroundColor="#f8f9fa"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Notes:"
+            android:textColor="#969696"
+            android:textSize="@dimen/_12sdp" />
+
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

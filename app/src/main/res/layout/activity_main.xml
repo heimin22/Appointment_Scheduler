@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
         android:layout_gravity="center"
         android:layout_marginBottom="850dp"
         app:cardBackgroundColor="#BBDEFB"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/inter_bold"
+                android:fontFamily="@font/inter_semibold"
                 android:text="Your Schedules"
                 android:textColor="#000000"
                 android:textSize="25sp" />
@@ -49,7 +49,7 @@
         android:layout_height="@dimen/_200sdp"
         android:layout_gravity="center"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="137dp"
+        android:layout_marginTop="@dimen/_70sdp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="452dp"
         app:cardBackgroundColor="#F8F9FA"
@@ -584,7 +584,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_600sdp"
-        android:layout_marginTop="@dimen/_330sdp"
+        android:layout_marginTop="@dimen/_310sdp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
