@@ -6,4 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#F8F9FA"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="269dp"
+        android:layout_height="272dp"
+        app:srcCompat="@drawable/rounded_square"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="140dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
