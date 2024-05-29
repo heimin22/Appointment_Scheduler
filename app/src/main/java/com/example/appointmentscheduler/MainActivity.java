@@ -1,9 +1,12 @@
 package com.example.appointmentscheduler;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -35,6 +38,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setDefaultFont();
+
+        //adrian
+
+        ImageButton AddButton =findViewById(R.id.addButton);
+        AddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //adrian
     }
 
     private void setDefaultFont() {
