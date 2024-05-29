@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         //adrian
 
-        ImageButton AddButton =findViewById(R.id.addButton);
+        ImageButton AddButton = findViewById(R.id.addButton);
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //adrian
+
+        ImageButton homeButton = findViewById(R.id.homeButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity();
+                System.exit(0);
+            }
+        });
     }
 
     private void setDefaultFont() {
