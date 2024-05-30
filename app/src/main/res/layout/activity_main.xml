@@ -65,33 +65,33 @@
             android:id="@+id/monthText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="June 2021"
-            android:fontFamily="@font/inter_semibold"
-            android:textColor="#1565C0"
-            android:textSize="20dp"
+            android:layout_marginLeft="22dp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="22dp"/>
+            android:fontFamily="@font/inter_semibold"
+            android:text="June 2021"
+            android:textColor="#1565C0"
+            android:textSize="20dp" />
 
         <ImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@drawable/chevron_forward"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="23dp"
-            android:layout_marginLeft="130dp"/>
+            android:src="@drawable/chevron_forward" />
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/chevron_backward"
             android:layout_marginLeft="280dp"
-            android:layout_marginTop="23dp"/>
+            android:layout_marginTop="23dp"
+            android:src="@drawable/chevron_backward" />
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/chevron_forward"
             android:layout_marginLeft="330dp"
-            android:layout_marginTop="23dp"/>
+            android:layout_marginTop="23dp"
+            android:src="@drawable/chevron_forward" />
 
         <GridLayout
             android:layout_width="311dp"
@@ -108,11 +108,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="0"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold"
-                android:text="SUN" />
+                android:paddingRight="20dp"
+                android:text="SUN"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/monday"
@@ -120,11 +120,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="1"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold"
-                android:text="MON" />
+                android:paddingRight="20dp"
+                android:text="MON"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/tuesday"
@@ -132,11 +132,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="2"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold"
-                android:text="TUE" />
+                android:paddingRight="20dp"
+                android:text="TUE"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/wednesday"
@@ -144,11 +144,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="3"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold"
-                android:text="WED" />
+                android:paddingRight="20dp"
+                android:text="WED"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/thursday"
@@ -156,11 +156,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="4"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold"
-                android:text="THU" />
+                android:paddingRight="20dp"
+                android:text="THU"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/friday"
@@ -168,11 +168,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="5"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold"
-                android:text="FRI" />
+                android:paddingRight="20dp"
+                android:text="FRI"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/saturday"
@@ -180,24 +180,24 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="6"
-                android:paddingRight="20dp"
-                android:textColor="#2196F3"
-                android:textSize="13dp"
                 android:fontFamily="@font/inter_semibold    "
-                android:text="SAT" />
+                android:paddingRight="20dp"
+                android:text="SAT"
+                android:textColor="#2196F3"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="13dp"
-                android:textSize="18dp"
                 android:layout_row="1"
                 android:layout_column="2"
-                android:textColor="#1565C0"
                 android:fontFamily="@font/inter_regular"
-                android:text="1" />
+                android:paddingLeft="10dp"
+                android:paddingTop="13dp"
+                android:text="1"
+                android:textColor="#1565C0"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/two"
@@ -205,12 +205,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="3"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="2"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="2" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/three"
@@ -220,9 +220,9 @@
                 android:layout_column="4"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="3"
                 android:textColor="#1565C0"
-                android:text="3" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/four"
@@ -230,12 +230,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="5"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="4"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="4" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/five"
@@ -243,12 +243,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="6"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="5"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="5" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/six"
@@ -256,12 +256,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="0"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="10dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="6"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="6" />
+                android:textSize="18dp" />
 
 
             <TextView
@@ -270,12 +270,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="2"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="8"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="8" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/nine"
@@ -283,12 +283,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="3"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="9"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="9" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/ten"
@@ -296,12 +296,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="4"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="10"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="10" />
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/seven"
@@ -309,8 +309,8 @@
                 android:layout_height="40dp"
                 android:layout_row="2"
                 android:layout_column="1"
-                android:paddingTop="13dp"
                 android:paddingLeft="-8dp"
+                android:paddingTop="13dp"
                 app:srcCompat="@drawable/seven" />
 
             <TextView
@@ -319,12 +319,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="5"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="3dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="11"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="11" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twelve"
@@ -332,12 +332,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="6"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="1dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="12"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="12" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/thirteen"
@@ -345,12 +345,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="0"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="13"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="13" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/fourteen"
@@ -358,12 +358,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="1"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:text="14"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="14" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/fifteen"
@@ -371,12 +371,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="2"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="15"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="15" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/sixteen"
@@ -384,12 +384,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="3"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="16"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="16" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/seventeen"
@@ -397,12 +397,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="4"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="6dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="17"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="17" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/eighteen"
@@ -410,12 +410,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="5"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="3dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="18"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="18" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/nineteen"
@@ -423,12 +423,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="6"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="1dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="19"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="19" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twenty"
@@ -436,12 +436,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="0"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="20"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="20" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyOne"
@@ -449,12 +449,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="1"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="5dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="21"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="21" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyTwo"
@@ -462,12 +462,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="2"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="22"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="22" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyThree"
@@ -475,12 +475,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="3"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="23"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="23" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyFour"
@@ -488,12 +488,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="4"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="24"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="24" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyFive"
@@ -501,12 +501,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="5"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="1dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="25"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="25" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentySix"
@@ -514,12 +514,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="6"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="-1dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="26"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="26" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentySeven"
@@ -527,12 +527,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="0"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="13dp"
-                android:textSize="18dp"
+                android:text="27"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="27" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyEight"
@@ -540,12 +540,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="1"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="28"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="28" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/twentyNine"
@@ -553,12 +553,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="2"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="3dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="29"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="29" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/thirty"
@@ -566,13 +566,12 @@
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="3"
+                android:fontFamily="@font/inter_regular"
                 android:paddingLeft="4dp"
                 android:paddingTop="5dp"
-                android:textSize="18dp"
+                android:text="30"
                 android:textColor="#1565C0"
-                android:fontFamily="@font/inter_regular"
-                android:text="30" />
-
+                android:textSize="18dp" />
 
 
         </GridLayout>
@@ -609,57 +608,58 @@
                 android:id="@+id/scheduleName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#000000"
-                android:layout_marginTop="12dp"
                 android:layout_marginStart="19dp"
-                android:text="Name" />
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
 
             <TextView
                 android:id="@+id/descriptionSample1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_light"
-                android:textColor="#000000"
-                android:layout_marginTop="48dp"
                 android:layout_marginStart="45dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/inter_light"
+                android:text="Description: Sample"
+                android:textColor="#000000"
                 android:textSize="12dp"
-                android:text="Description: Sample" />
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/meetingLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#000000"
-                android:layout_marginTop="90dp"
                 android:layout_marginStart="19dp"
-                android:textSize="12dp"
-                android:text="Meeting Link:" />
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Meeting Link:"
+                android:textColor="#000000"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/realLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#42A5F5"
-                android:layout_marginTop="90dp"
                 android:layout_marginStart="98dp"
-                android:textSize="12dp"
-                android:text="https://www.sampleappointment.com" />
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="https://www.sampleappointment.com"
+                android:textColor="#42A5F5"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_marginStart="290dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/inter_regular"
+                android:text="00:00"
                 android:textColor="#000000"
-                android:textSize="20dp"
-                android:text="00:00" />
+                android:textSize="20dp" />
 
 
         </androidx.cardview.widget.CardView>
@@ -680,57 +680,58 @@
                 android:id="@+id/scheduleName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#000000"
-                android:layout_marginTop="12dp"
                 android:layout_marginStart="19dp"
-                android:text="Name" />
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
 
             <TextView
                 android:id="@+id/descriptionSample2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_light"
-                android:textColor="#000000"
-                android:layout_marginTop="48dp"
                 android:layout_marginStart="45dp"
-                android:textSize="12dp"
-                android:text="Description: Sample" />
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/inter_light"
+                android:text="Description: Sample"
+                android:textColor="#000000"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/meetingLink2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#000000"
-                android:layout_marginTop="90dp"
                 android:layout_marginStart="19dp"
-                android:textSize="12dp"
-                android:text="Meeting Link:" />
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Meeting Link:"
+                android:textColor="#000000"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/realLink2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#42A5F5"
-                android:layout_marginTop="90dp"
                 android:layout_marginStart="98dp"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="https://www.sampleappointment.com"
+                android:textColor="#42A5F5"
                 android:textSize="12dp"
-                android:text="https://www.sampleappointment.com" />
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/time2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_marginStart="290dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/inter_regular"
+                android:text="00:00"
                 android:textColor="#000000"
-                android:textSize="20dp"
-                android:text="00:00" />
+                android:textSize="20dp" />
 
 
         </androidx.cardview.widget.CardView>
@@ -751,56 +752,56 @@
                 android:id="@+id/scheduleName3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#000000"
-                android:layout_marginTop="12dp"
                 android:layout_marginStart="19dp"
-                android:text="Name" />
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/descriptionSample3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_light"
-                android:textColor="#000000"
-                android:layout_marginTop="48dp"
                 android:layout_marginStart="45dp"
-                android:textSize="12dp"
-                android:text="Description: Sample" />
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/inter_light"
+                android:text="Description: Sample"
+                android:textColor="#000000"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/meetingLink3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#000000"
-                android:layout_marginTop="90dp"
                 android:layout_marginStart="19dp"
-                android:textSize="12dp"
-                android:text="Meeting Link:" />
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Meeting Link:"
+                android:textColor="#000000"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/realLink3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#42A5F5"
-                android:layout_marginTop="90dp"
                 android:layout_marginStart="98dp"
-                android:textSize="12dp"
-                android:text="https://www.sampleappointment.com" />
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="https://www.sampleappointment.com"
+                android:textColor="#42A5F5"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/time3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_marginStart="290dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/inter_regular"
+                android:text="00:00"
                 android:textColor="#000000"
-                android:textSize="20dp"
-                android:text="00:00" />
+                android:textSize="20dp" />
 
         </androidx.cardview.widget.CardView>
 
@@ -809,11 +810,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/navBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_marginTop="841dp"
-        app:cardBackgroundColor="#BBDEFB"
-        app:cardCornerRadius="30dp"
-        app:cardMaxElevation="70dp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="854dp"
+        android:layout_marginBottom="2dp"
+        android:translationY="0dp"
+        app:cardBackgroundColor="#F8F9FA"
+        app:cardElevation="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -824,28 +826,49 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:backgroundTint="#BBDEFB"
+            android:backgroundTint="#F8F9FA"
             android:paddingBottom="10dp"
             android:src="@drawable/add" />
 
         <ImageButton
             android:id="@+id/homeButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="#F8F9FA"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:id="@+id/homeHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_50sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:backgroundTint="#BBDEFB"
-            android:src="@drawable/home" />
+            android:text="Home"
+            android:textColor="#1976D2"
+            android:textSize="@dimen/_8sdp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginStart="@dimen/_54sdp"
+            android:layout_marginTop="@dimen/_45sdp"/>
 
         <ImageButton
             android:id="@+id/profileButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_225sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="#F8F9FA"
+            android:src="@drawable/profile" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/profile"
-            android:backgroundTint="#BBDEFB"
-            android:layout_marginLeft="@dimen/_216sdp"
-            android:layout_marginTop="@dimen/_20sdp"/>
-
+            android:id="@+id/profileHint"
+            android:text="Profile"
+            android:textColor="#1976D2"
+            android:textSize="@dimen/_8sdp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginStart="@dimen/_228sdp"
+            android:layout_marginTop="@dimen/_45sdp"/>
 
 
     </androidx.cardview.widget.CardView>

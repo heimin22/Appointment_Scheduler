@@ -62,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 System.exit(0);
             }
         });
+
+        ImageButton profileButton = findViewById(R.id.profileButton);
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setDefaultFont() {
