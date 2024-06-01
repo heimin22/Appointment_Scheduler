@@ -672,7 +672,7 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="48dp"
             android:fontFamily="@font/inter_light"
-            android:text="Description: Sample"
+            android:text="Description:"
             android:textColor="#000000"
             android:textSize="12dp"
             tools:ignore="TextSizeCheck" />
@@ -686,17 +686,6 @@
             android:fontFamily="@font/inter_regular"
             android:text="Meeting Link:"
             android:textColor="#000000"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/realLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="90dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="https://www.sampleappointment.com"
-            android:textColor="#42A5F5"
             android:textSize="12dp" />
 
         <TextView
@@ -745,7 +734,7 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="48dp"
             android:fontFamily="@font/inter_light"
-            android:text="Description: Sample"
+            android:text="Description:"
             android:textColor="#000000"
             android:textSize="12dp" />
 
@@ -759,18 +748,6 @@
             android:text="Meeting Link:"
             android:textColor="#000000"
             android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/realLink2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="90dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="https://www.sampleappointment.com"
-            android:textColor="#42A5F5"
-            android:textSize="12dp"
-            tools:ignore="TextSizeCheck" />
 
         <TextView
             android:id="@+id/time2"
@@ -791,9 +768,9 @@
         android:id="@+id/navBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:translationY="3dp"
+        android:translationY="@dimen/_6sdp"
         app:cardBackgroundColor="#F8F9FA"
-        app:cardElevation="70dp"
+        app:cardElevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -862,7 +839,7 @@
             android:textSize="@dimen/_8sdp"/>
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/menuButton"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:src="@drawable/menu"

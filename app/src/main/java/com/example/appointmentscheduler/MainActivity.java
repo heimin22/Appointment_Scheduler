@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     // request code for notification permission
     private static final int NOTIFICATION_PERMISSION_CODE = 123;
     private TextView dateTextView;
-    private Button pickDateButton, viewAllScheds;
+    private Button pickDateButton, viewAllScheds, menuButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                startActivity(intent);
+            }
+        });
 
+        menuButton.findViewById(R.id.menuButton);
+
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
+                startActivity(intent);
             }
         });
 
@@ -69,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finishAffinity();
-                System.exit(0);
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
