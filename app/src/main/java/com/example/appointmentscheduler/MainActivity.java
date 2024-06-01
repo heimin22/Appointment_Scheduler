@@ -20,6 +20,9 @@ import java.util.Calendar;
 import android.widget.Button;
 import android.app.Application;
 import android.graphics.Typeface;
+
+import org.w3c.dom.Text;
+
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -61,8 +64,15 @@ public class MainActivity extends AppCompatActivity {
         currentDate = Calendar.getInstance();
         updateCalendar();
 
+        prevMonthButton.setOnClickListener(v -> {
+            currentDate.add(Calendar.MONTH, -1);
+            updateCalendar();
+        });
 
-
+        nextMonthButton.setOnClickListener(v -> {
+            currentDate.add(Calendar.MONTH, 1);
+            updateCalendar();
+        });
 
         viewAllScheds = findViewById(R.id.viewAllSched);
 
@@ -119,7 +129,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateCalendar() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
+        monthText.setText(sdf.format(currentDate.getTime()));
 
+        // clearing the grid
+        calendarGrid.removeAllViews();
+
+        Calendar calendar = (Calendar) currentDate.clone();
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        int firstDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+        int daysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        // add day views to the grid
+        for (int i = 0; i < firstDayOfWeek; i++)
+        {
+            TextView dayView = new TextView(this);
+            if (i >= firstDayOfWeek) {
+                dayView.setText(String.valueOf(1 - firstDayOfWeek + 1));
+            }
+            calendarGrid.addView(dayView);
+        }
     }
 
     private void setDefaultFont() {
