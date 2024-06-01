@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.GridLayout;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
@@ -20,9 +19,6 @@ import java.util.Calendar;
 import android.widget.Button;
 import android.app.Application;
 import android.graphics.Typeface;
-
-import org.w3c.dom.Text;
-
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -33,10 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     // request code for notification permission
     private static final int NOTIFICATION_PERMISSION_CODE = 123;
-    private TextView monthText;
-    private GridLayout calendarGrid;
-    private Calendar currentDate;
-    private Button pickDateButton, viewAllScheds, menuButton;
+
+
 
 
     @Override
@@ -56,25 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // initializing the default font method
         setDefaultFont();
 
-        monthText = findViewById(R.id.monthText);
-        calendarGrid = findViewById(R.id.calendarGrid);
-        ImageButton prevMonthButton = findViewById(R.id.prevMonthButton);
-        ImageButton nextMonthButton = findViewById(R.id.nextMonthButton);
-
-        currentDate = Calendar.getInstance();
-        updateCalendar();
-
-        prevMonthButton.setOnClickListener(v -> {
-            currentDate.add(Calendar.MONTH, -1);
-            updateCalendar();
-        });
-
-        nextMonthButton.setOnClickListener(v -> {
-            currentDate.add(Calendar.MONTH, 1);
-            updateCalendar();
-        });
-
-        viewAllScheds = findViewById(R.id.viewAllSched);
+        Button viewAllScheds=findViewById(R.id.viewAllSched);
 
         viewAllScheds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        menuButton.findViewById(R.id.menuButton);
+        ImageButton menuButton = findViewById(R.id.menuButton);
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,13 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton homeButton = findViewById(R.id.homeButton);
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        homeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         ImageButton profileButton = findViewById(R.id.profileButton);
 
@@ -126,29 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void updateCalendar() {
-        SimpleDateFormat sdf = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
-        monthText.setText(sdf.format(currentDate.getTime()));
-
-        // clearing the grid
-        calendarGrid.removeAllViews();
-
-        Calendar calendar = (Calendar) currentDate.clone();
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
-        int firstDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
-        int daysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-
-        // add day views to the grid
-        for (int i = 0; i < firstDayOfWeek; i++)
-        {
-            TextView dayView = new TextView(this);
-            if (i >= firstDayOfWeek) {
-                dayView.setText(String.valueOf(1 - firstDayOfWeek + 1));
-            }
-            calendarGrid.addView(dayView);
-        }
     }
 
     private void setDefaultFont() {
