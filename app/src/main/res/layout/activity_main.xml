@@ -8,52 +8,99 @@
     android:backgroundTint="#F8F9FA"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLine1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.09"/>
+        app:layout_constraintGuide_percent="0.09" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLine2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90"/>
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5101172" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.79" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="845dp" />
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_gravity="center"
-        android:layout_marginBottom="850dp"
         app:cardBackgroundColor="#BBDEFB"
         app:cardElevation="@dimen/_30sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideLine9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/_34sdp"
-            android:paddingEnd="@dimen/_18sdp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/inter_semibold"
-                android:text="Your Schedules"
-                android:textColor="#000000"
-                android:textSize="25sp" />
-
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Your Schedules"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -62,17 +109,16 @@
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_200sdp"
         android:layout_gravity="center"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="@dimen/_70sdp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="452dp"
         app:cardBackgroundColor="#F8F9FA"
         app:cardCornerRadius="20dp"
         app:cardElevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/guideLine4"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideLine1"
+        app:layout_constraintTop_toTopOf="@+id/guideLine3"
+        app:layout_constraintVertical_bias="0.12">
 
 
         <TextView
@@ -593,299 +639,263 @@
 
     </androidx.cardview.widget.CardView>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_600sdp"
-        android:layout_marginTop="@dimen/_310sdp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/schedule1"
-            android:layout_width="369dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#F8F9FA"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="30dp"
-            tools:layout_editor_absoluteX="21dp"
-            tools:layout_editor_absoluteY="486dp">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/schedule1"
+        android:layout_width="369dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#F8F9FA"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+        app:layout_constraintStart_toStartOf="@+id/guideLine1"
+        app:layout_constraintTop_toTopOf="@+id/guideline5">
 
 
-            <TextView
-                android:id="@+id/scheduleName1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Name"
-                android:textColor="#000000"
-                android:textSize="20dp" />
+        <TextView
+            android:id="@+id/scheduleName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="20dp" />
 
 
-            <TextView
-                android:id="@+id/descriptionSample1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/inter_light"
-                android:text="Description: Sample"
-                android:textColor="#000000"
-                android:textSize="12dp"
-                tools:ignore="TextSizeCheck" />
+        <TextView
+            android:id="@+id/descriptionSample1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/inter_light"
+            android:text="Description: Sample"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            tools:ignore="TextSizeCheck" />
 
-            <TextView
-                android:id="@+id/meetingLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Meeting Link:"
-                android:textColor="#000000"
-                android:textSize="12dp" />
+        <TextView
+            android:id="@+id/meetingLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Meeting Link:"
+            android:textColor="#000000"
+            android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/realLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="98dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="https://www.sampleappointment.com"
-                android:textColor="#42A5F5"
-                android:textSize="12dp" />
+        <TextView
+            android:id="@+id/realLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="https://www.sampleappointment.com"
+            android:textColor="#42A5F5"
+            android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="290dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="00:00"
-                android:textColor="#000000"
-                android:textSize="20dp" />
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/schedule2"
-            android:layout_width="369dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#F8F9FA"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="30dp"
-            tools:layout_editor_absoluteX="21dp"
-            tools:layout_editor_absoluteY="627dp">
-
-            <TextView
-                android:id="@+id/scheduleName2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Name"
-                android:textColor="#000000"
-                android:textSize="20dp" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="00:00"
+            android:textColor="#000000"
+            android:textSize="20dp" />
 
 
-            <TextView
-                android:id="@+id/descriptionSample2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/inter_light"
-                android:text="Description: Sample"
-                android:textColor="#000000"
-                android:textSize="12dp" />
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/meetingLink2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Meeting Link:"
-                android:textColor="#000000"
-                android:textSize="12dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/schedule2"
+        android:layout_width="369dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#F8F9FA"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideLine8"
+        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+        app:layout_constraintStart_toStartOf="@+id/guideLine1"
+        app:layout_constraintTop_toTopOf="@+id/guideLine7">
 
-            <TextView
-                android:id="@+id/realLink2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="98dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="https://www.sampleappointment.com"
-                android:textColor="#42A5F5"
-                android:textSize="12dp"
-                tools:ignore="TextSizeCheck" />
-
-            <TextView
-                android:id="@+id/time2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="290dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="00:00"
-                android:textColor="#000000"
-                android:textSize="20dp" />
+        <TextView
+            android:id="@+id/scheduleName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="20dp" />
 
 
-        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/descriptionSample2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/inter_light"
+            android:text="Description: Sample"
+            android:textColor="#000000"
+            android:textSize="12dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/schedule3"
-            android:layout_width="369dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#F8F9FA"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="30dp"
-            tools:layout_editor_absoluteX="21dp"
-            tools:layout_editor_absoluteY="770dp">
+        <TextView
+            android:id="@+id/meetingLink2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Meeting Link:"
+            android:textColor="#000000"
+            android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/scheduleName3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Name"
-                android:textColor="#000000"
-                android:textSize="20dp" />
+        <TextView
+            android:id="@+id/realLink2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="https://www.sampleappointment.com"
+            android:textColor="#42A5F5"
+            android:textSize="12dp"
+            tools:ignore="TextSizeCheck" />
 
-            <TextView
-                android:id="@+id/descriptionSample3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/inter_light"
-                android:text="Description: Sample"
-                android:textColor="#000000"
-                android:textSize="12dp" />
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="00:00"
+            android:textColor="#000000"
+            android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/meetingLink3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Meeting Link:"
-                android:textColor="#000000"
-                android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/realLink3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="98dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="https://www.sampleappointment.com"
-                android:textColor="#42A5F5"
-                android:textSize="12dp" />
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/time3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="290dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="00:00"
-                android:textColor="#000000"
-                android:textSize="20dp" />
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/navBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_marginTop="854dp"
-        android:layout_marginBottom="2dp"
-        android:translationY="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:translationY="3dp"
         app:cardBackgroundColor="#F8F9FA"
         app:cardElevation="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/guideLine10">
 
         <ImageButton
             android:id="@+id/addButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_105sdp"
+            android:layout_marginTop="@dimen/_11sdp"
             android:backgroundTint="#F8F9FA"
             android:paddingBottom="10dp"
-            android:src="@drawable/add" />
+            android:src="@drawable/addv2" />
 
         <ImageButton
             android:id="@+id/homeButton"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginLeft="@dimen/_50sdp"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:backgroundTint="#F8F9FA"
-            android:src="@drawable/home" />
+            android:src="@drawable/homev2" />
+
 
         <TextView
             android:id="@+id/homeHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
-            android:textColor="#1976D2"
-            android:textSize="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_34sdp"
+            android:layout_marginTop="@dimen/_37sdp"
             android:fontFamily="@font/inter_regular"
-            android:layout_marginStart="@dimen/_54sdp"
-            android:layout_marginTop="@dimen/_45sdp"/>
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
 
         <ImageButton
             android:id="@+id/profileButton"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginStart="@dimen/_225sdp"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_180sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:backgroundTint="#F8F9FA"
-            android:src="@drawable/profile" />
+            android:src="@drawable/profilev2" />
 
         <TextView
+            android:id="@+id/profileHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/profileHint"
-            android:text="Profile"
-            android:textColor="#1976D2"
-            android:textSize="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_183sdp"
+            android:layout_marginTop="@dimen/_37sdp"
             android:fontFamily="@font/inter_regular"
-            android:layout_marginStart="@dimen/_228sdp"
-            android:layout_marginTop="@dimen/_45sdp"/>
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+        <TextView
+            android:id="@+id/addText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_37sdp"
+            android:layout_marginStart="@dimen/_111sdp"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:text="Add"
+            android:textSize="@dimen/_8sdp"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/menu"
+            app:srcCompat="@drawable/menu"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_248sdp"
+            android:background="#f8f9fa"/>
+
+        <TextView
+            android:id="@+id/menuText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_253sdp"
+            android:layout_marginTop="@dimen/_37sdp"
+            android:text="Menu"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
 
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/viewAllSched"
+        android:background="@drawable/rounded_rectangle"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:text="View all schedules"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guideLine10"
+        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+        app:layout_constraintStart_toStartOf="@+id/guideLine1"
+        app:layout_constraintTop_toTopOf="@+id/guideLine8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

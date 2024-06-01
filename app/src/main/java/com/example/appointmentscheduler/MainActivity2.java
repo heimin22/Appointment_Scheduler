@@ -1,3 +1,5 @@
+// SETTING APPOINTMENT CLASS
+
 package com.example.appointmentscheduler;
 
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,3 +1,5 @@
+// HOME CLASS
+
 package com.example.appointmentscheduler;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     // request code for notification permission
     private static final int NOTIFICATION_PERMISSION_CODE = 123;
     private TextView dateTextView;
-    private Button pickDateButton;
+    private Button pickDateButton, viewAllScheds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
         setDefaultFont();
 
+        viewAllScheds = findViewById(R.id.viewAllSched);
+
+        viewAllScheds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+
+            }
+        });
+
         //adrian
 
         ImageButton AddButton = findViewById(R.id.addButton);
@@ -47,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
-
             }
         });
 
