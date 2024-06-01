@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.GridLayout;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
@@ -20,26 +21,48 @@ import android.widget.Button;
 import android.app.Application;
 import android.graphics.Typeface;
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     // request code for notification permission
     private static final int NOTIFICATION_PERMISSION_CODE = 123;
-    private TextView dateTextView;
+    private TextView monthText;
+    private GridLayout calendarGrid;
+    private Calendar currentDate;
     private Button pickDateButton, viewAllScheds, menuButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Setting the background color and initializing the default font method
         ConstraintLayout main_layout = findViewById(R.id.main_layout);
         main_layout.setBackgroundColor(Color.parseColor("#F8F9FA"));
 
+        // if the build version is greater than or equal to android Nougat, then the status bar color is set to transparent
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
+        // initializing the default font method
         setDefaultFont();
+
+        monthText = findViewById(R.id.monthText);
+        calendarGrid = findViewById(R.id.calendarGrid);
+        ImageButton prevMonthButton = findViewById(R.id.prevMonthButton);
+        ImageButton nextMonthButton = findViewById(R.id.nextMonthButton);
+
+        currentDate = Calendar.getInstance();
+        updateCalendar();
+
+
+
 
         viewAllScheds = findViewById(R.id.viewAllSched);
 
@@ -93,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void updateCalendar() {
+
     }
 
     private void setDefaultFont() {
