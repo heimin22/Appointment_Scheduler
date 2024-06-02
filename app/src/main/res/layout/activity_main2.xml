@@ -235,6 +235,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         app:cardBackgroundColor="#F8F9FA"
+        android:translationY="@dimen/_minus3sdp"
         app:cardElevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

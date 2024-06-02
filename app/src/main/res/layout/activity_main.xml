@@ -771,7 +771,7 @@
         android:id="@+id/navBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:translationY="@dimen/_9sdp"
+        android:translationY="@dimen/_7sdp"
         app:cardBackgroundColor="#F8F9FA"
         app:cardElevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

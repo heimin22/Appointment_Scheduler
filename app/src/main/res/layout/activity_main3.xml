@@ -7,4 +7,107 @@
     android:background="#f8f9fa"
     tools:context=".MainActivity3">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="845dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:translationY="@dimen/_6sdp"
+        app:cardBackgroundColor="#F8F9FA"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideLine10">
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:translationX="@dimen/_105sdp"
+            android:translationY="@dimen/_10sdp"
+            android:backgroundTint="#F8F9FA"
+            android:paddingBottom="10dp"
+            android:src="@drawable/addv2" />
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:translationX="@dimen/_30sdp"
+            android:translationY="@dimen/_10sdp"
+            android:backgroundTint="#F8F9FA"
+            android:src="@drawable/homev2" />
+
+
+        <TextView
+            android:id="@+id/homeHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="@dimen/_37sdp"
+            android:translationX="@dimen/_34sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:translationY="@dimen/_10sdp"
+            android:translationX="@dimen/_180sdp"
+            android:backgroundTint="#F8F9FA"
+            android:src="@drawable/profilev2" />
+
+        <TextView
+            android:id="@+id/profileHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="@dimen/_183sdp"
+            android:translationY="@dimen/_37sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+        <TextView
+            android:id="@+id/addText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="@dimen/_37sdp"
+            android:translationX="@dimen/_111sdp"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:text="Add"
+            android:textSize="@dimen/_8sdp"/>
+
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/menu"
+            app:srcCompat="@drawable/menu"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_248sdp"
+            android:background="#f8f9fa"/>
+
+        <TextView
+            android:id="@+id/menuText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="@dimen/_253sdp"
+            android:translationY="@dimen/_37sdp"
+            android:text="Menu"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
