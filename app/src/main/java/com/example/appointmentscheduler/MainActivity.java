@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int NOTIFICATION_PERMISSION_CODE = 123;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
