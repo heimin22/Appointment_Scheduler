@@ -4,6 +4,669 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity4">
+    tools:context=".MainActivity4"
+    android:background="#F8F9FA"
+    >
+
+    <ScrollView
+        android:id="@+id/ba"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule1"
+                android:layout_width="369dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule2"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule3"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule4"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule5"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule6"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule7"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule8"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule9"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/schedule10"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#F8F9FA"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideLine6"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine2"
+                app:layout_constraintStart_toStartOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/scheduleName10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionSample10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/inter_light"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/meetingLink10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Meeting Link:"
+                    android:textColor="#000000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/time10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
