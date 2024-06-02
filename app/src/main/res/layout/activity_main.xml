@@ -1,880 +1,396 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.09" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5101172" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.64" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.66" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.79" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="879dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="845dp" />
-
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_gravity="center"
-        android:translationY="@dimen/_5sdp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
         app:cardBackgroundColor="#BBDEFB"
-        app:cardElevation="@dimen/_30sdp"
-        app:layout_constraintBottom_toTopOf="@+id/guideLine9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:cardElevation="5dp"
+        app:contentPadding="5dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/black"
             android:text="Your Schedules"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="22.5dp">
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/calendarContainer"
-        android:layout_width="@dimen/_250sdp"
-        android:layout_height="@dimen/_200sdp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#F8F9FA"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideLine4"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLine1"
-        app:layout_constraintTop_toTopOf="@+id/guideLine3"
-        app:layout_constraintVertical_bias="0.12">
-
-
-        <TextView
-            android:id="@+id/monthText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/inter_semibold"
-            android:text="June 2021"
-            android:textColor="#1565C0"
-            android:textSize="20dp" />
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="23dp"
-            android:src="@drawable/chevron_forward" />
-
-        <ImageButton
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_12sdp"
-            android:translationX="@dimen/_180sdp"
-            android:translationY="@dimen/_15sdp"
-            android:background="#f8f9fa"
-            android:src="@drawable/chevron_backward" />
-
-        <ImageButton
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_12sdp"
-            android:translationX="@dimen/_205sdp"
-            android:translationY="@dimen/_15sdp"
-            android:background="#f8f9fa"
-            android:src="@drawable/chevron_forward" />
-
-        <GridLayout
-            android:layout_width="311dp"
-            android:layout_height="210dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:columnCount="7"
-            android:rowCount="6">
-
-
-            <TextView
-                android:id="@+id/sunday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:fontFamily="@font/inter_semibold"
-                android:paddingRight="20dp"
-                android:text="SUN"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/monday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:fontFamily="@font/inter_semibold"
-                android:paddingRight="20dp"
-                android:text="MON"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="2"
-                android:fontFamily="@font/inter_semibold"
-                android:paddingRight="20dp"
-                android:text="TUE"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/wednesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="3"
-                android:fontFamily="@font/inter_semibold"
-                android:paddingRight="20dp"
-                android:text="WED"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/thursday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="4"
-                android:fontFamily="@font/inter_semibold"
-                android:paddingRight="20dp"
-                android:text="THU"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/friday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="5"
-                android:fontFamily="@font/inter_semibold"
-                android:paddingRight="20dp"
-                android:text="FRI"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="6"
-                android:fontFamily="@font/inter_semibold    "
-                android:paddingRight="20dp"
-                android:text="SAT"
-                android:textColor="#2196F3"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="2"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="10dp"
-                android:paddingTop="13dp"
-                android:text="1"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="3"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:text="2"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="4"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:text="3"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="5"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="4"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="6"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="5"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/six"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="10dp"
-                android:paddingTop="13dp"
-                android:text="6"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-
-            <TextView
-                android:id="@+id/eight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_column="2"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:text="8"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/nine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_column="3"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:text="9"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/ten"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_column="4"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="10"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <ImageView
-                android:id="@+id/seven"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_row="2"
-                android:layout_column="1"
-                android:paddingLeft="-8dp"
-                android:paddingTop="13dp"
-                app:srcCompat="@drawable/seven" />
-
-            <TextView
-                android:id="@+id/eleven"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_column="5"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="3dp"
-                android:paddingTop="10dp"
-                android:text="11"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twelve"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_column="6"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="1dp"
-                android:paddingTop="10dp"
-                android:text="12"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/thirteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="0"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="13"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/fourteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="1"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="14"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/fifteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="2"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="13dp"
-                android:text="15"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/sixteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="3"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="13dp"
-                android:text="16"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/seventeen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="4"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="6dp"
-                android:paddingTop="13dp"
-                android:text="17"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/eighteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="5"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="3dp"
-                android:paddingTop="13dp"
-                android:text="18"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/nineteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="6"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="1dp"
-                android:paddingTop="13dp"
-                android:text="19"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twenty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="0"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="13dp"
-                android:text="20"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="1"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:text="21"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="2"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="5dp"
-                android:text="22"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="3"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="5dp"
-                android:text="23"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyFour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="4"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="5dp"
-                android:text="24"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyFive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="5"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="1dp"
-                android:paddingTop="5dp"
-                android:text="25"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentySix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="4"
-                android:layout_column="6"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="-1dp"
-                android:paddingTop="5dp"
-                android:text="26"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentySeven"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="5"
-                android:layout_column="0"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="13dp"
-                android:text="27"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyEight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="5"
-                android:layout_column="1"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="5dp"
-                android:text="28"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/twentyNine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="5"
-                android:layout_column="2"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="3dp"
-                android:paddingTop="5dp"
-                android:text="29"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/thirty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="5"
-                android:layout_column="3"
-                android:fontFamily="@font/inter_regular"
-                android:paddingLeft="4dp"
-                android:paddingTop="5dp"
-                android:text="30"
-                android:textColor="#1565C0"
-                android:textSize="18dp" />
-
-
-        </GridLayout>
+        </TextView>
 
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/schedule1"
-        android:layout_width="369dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#F8F9FA"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideLine6"
-        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
-        app:layout_constraintStart_toStartOf="@+id/guideLine1"
-        app:layout_constraintTop_toTopOf="@+id/guideline5">
-
-
-        <TextView
-            android:id="@+id/scheduleName1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Name"
-            android:textColor="#000000"
-            android:textSize="20dp" />
-
-
-        <TextView
-            android:id="@+id/descriptionSample1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="48dp"
-            android:fontFamily="@font/inter_light"
-            android:text="Description"
-            android:textColor="#000000"
-            android:textSize="12dp"
-            tools:ignore="TextSizeCheck" />
-
-        <TextView
-            android:id="@+id/meetingLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="90dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Meeting Link:"
-            android:textColor="#000000"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="00:00"
-            android:textColor="#000000"
-            android:textSize="20dp" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/schedule2"
-        android:layout_width="369dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#F8F9FA"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideLine8"
-        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
-        app:layout_constraintStart_toStartOf="@+id/guideLine1"
-        app:layout_constraintTop_toTopOf="@+id/guideLine7">
-
-        <TextView
-            android:id="@+id/scheduleName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Name"
-            android:textColor="#000000"
-            android:textSize="20dp" />
-
-
-        <TextView
-            android:id="@+id/descriptionSample2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="48dp"
-            android:fontFamily="@font/inter_light"
-            android:text="Description"
-            android:textColor="#000000"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/meetingLink2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="90dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Meeting Link:"
-            android:textColor="#000000"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/time2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="00:00"
-            android:textColor="#000000"
-            android:textSize="20dp" />
-
-
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/navBar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:translationY="@dimen/_7sdp"
-        app:cardBackgroundColor="#F8F9FA"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideLine10">
-
-        <ImageButton
-            android:id="@+id/addButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:translationX="@dimen/_105sdp"
-            android:translationY="@dimen/_10sdp"
-            android:backgroundTint="#F8F9FA"
-            android:paddingBottom="10dp"
-            android:src="@drawable/addv2" />
-
-        <ImageButton
-            android:id="@+id/homeButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:translationX="@dimen/_30sdp"
-            android:translationY="@dimen/_10sdp"
-            android:backgroundTint="#F8F9FA"
-            android:src="@drawable/homev2" />
+        android:layout_height="325dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edge"
+        android:elevation="10dp"
+        android:padding="5dp">
 
 
-        <TextView
-            android:id="@+id/homeHint"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:translationY="@dimen/_37sdp"
-            android:translationX="@dimen/_34sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Home"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp" />
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
-        <ImageButton
-            android:id="@+id/profileButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:translationY="@dimen/_10sdp"
-            android:translationX="@dimen/_180sdp"
-            android:backgroundTint="#F8F9FA"
-            android:src="@drawable/profilev2" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
 
-        <TextView
-            android:id="@+id/profileHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationX="@dimen/_183sdp"
-            android:translationY="@dimen/_37sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Profile"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp" />
+                <Button
+                    android:id="@+id/btn_prev"
+                    android:onClick="previousMonthAction"
+                    android:gravity="left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="prev"
+                    android:textColor="#3572EF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/addText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationY="@dimen/_37sdp"
-            android:translationX="@dimen/_111sdp"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="@color/black"
-            android:text="Add"
-            android:textSize="@dimen/_8sdp"/>
+                <TextView
+                    android:id="@+id/monthYearTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="MONTH YEAR" />
 
-        <ImageButton
-            android:id="@+id/menuButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/menu"
-            app:srcCompat="@drawable/menu"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_248sdp"
-            android:background="#f8f9fa"/>
+                <Button
+                    android:id="@+id/btn_next"
+                    android:gravity="right"
+                    android:onClick="nextMonthAction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="next"
+                    android:textColor="#3572EF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/menuText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationX="@dimen/_253sdp"
-            android:translationY="@dimen/_37sdp"
-            android:text="Menu"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp" />
+            </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SUN"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MON"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TUE"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="WED"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="THU"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="FRI"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SAT"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendarRecyclerView"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_edge"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="5dp"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"/>
+
+                <TextView
+                    android:id="@+id/tv_time1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:text="00:00">
+                </TextView>
+
+
+            </LinearLayout>
+
+            <TextView
+
+                android:id="@+id/tv_description1"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="12dp">
+
+            </TextView>
+
+            <TextView
+
+                android:id="@+id/tv_link1"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="link"
+                android:textSize="12dp">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edge"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="5dp"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"/>
+
+                <TextView
+                    android:id="@+id/tv_time2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:text="00:00">
+                </TextView>
+
+
+            </LinearLayout>
+
+            <TextView
+
+                android:id="@+id/tv_description2"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="12dp">
+
+            </TextView>
+
+            <TextView
+
+                android:id="@+id/tv_link2"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="link"
+                android:textSize="12dp">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/viewAllSched"
-        android:background="@drawable/rounded_rectangle"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1976D2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
         android:text="View all schedules"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/guideLine10"
-        app:layout_constraintEnd_toStartOf="@+id/guideLine2"
-        app:layout_constraintStart_toStartOf="@+id/guideLine1"
-        app:layout_constraintTop_toTopOf="@+id/guideLine8" />
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="#BBDEFB">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginTop="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/home"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/addButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginTop="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/add"/>
+
+            <ImageButton
+                android:id="@+id/profileButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginTop="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/profile"/>
+
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginTop="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
