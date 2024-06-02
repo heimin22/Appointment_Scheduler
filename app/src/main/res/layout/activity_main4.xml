@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
@@ -98,7 +98,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
@@ -162,7 +162,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
@@ -226,7 +226,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
@@ -290,7 +290,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
@@ -354,7 +354,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
@@ -418,7 +418,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideLine2"
                 app:layout_constraintStart_toStartOf="@+id/guideLine1"
                 app:layout_constraintTop_toTopOf="@+id/guideline5"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
 
                 <TextView
