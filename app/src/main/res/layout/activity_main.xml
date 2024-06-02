@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F0F0F0"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -24,7 +25,9 @@
             android:textStyle="bold"
             android:textSize="20sp"
             android:gravity="center"
-            android:layout_marginTop="22.5dp">
+
+            android:fontFamily="@font/inter_semibold"
+            android:translationY="17dp">
 
         </TextView>
 
@@ -58,6 +61,7 @@
 
                 <Button
                     android:id="@+id/btn_prev"
+                    android:fontFamily="@font/inter_bold"
                     android:onClick="previousMonthAction"
                     android:gravity="left"
                     android:layout_width="0dp"
@@ -66,11 +70,11 @@
                     android:background="@null"
                     android:text="prev"
                     android:textColor="#3572EF"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/monthYearTV"
+                    android:fontFamily="@font/inter_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -89,7 +93,7 @@
                     android:text="next"
                     android:textColor="#3572EF"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_bold"/>
 
             </LinearLayout>
 
@@ -107,6 +111,7 @@
                     android:text="SUN"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -115,6 +120,7 @@
                     android:text="MON"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -123,6 +129,7 @@
                     android:text="TUE"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -131,6 +138,7 @@
                     android:text="WED"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -139,6 +147,7 @@
                     android:text="THU"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -147,6 +156,7 @@
                     android:text="FRI"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -155,6 +165,7 @@
                     android:text="SAT"
                     android:textAlignment="center"
                     android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
                     />
 
             </LinearLayout>
@@ -328,24 +339,29 @@
         android:id="@+id/viewAllSched"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#1976D2"
+        android:translationY="60dp"
+        android:background="@drawable/rounded_rectangle"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:text="View all schedules"
+        android:fontFamily="@font/inter_medium"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        app:cardBackgroundColor="#BBDEFB">
+        android:translationY="95dp"
+        app:cardElevation="70dp"
+        app:cardBackgroundColor="#f8f9fa">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -353,41 +369,101 @@
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:layout_marginTop="7.5dp"
+                android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/home"/>
+                android:src="@drawable/homev2"/>
 
 
             <ImageButton
                 android:id="@+id/addButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:layout_marginTop="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/add"/>
+                android:src="@drawable/addv2"
+                android:translationY="8dp" />
 
             <ImageButton
                 android:id="@+id/profileButton"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:layout_marginTop="7.5dp"
+                android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/profile"/>
+                android:src="@drawable/profilev2"/>
 
             <ImageButton
                 android:id="@+id/menuButton"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:layout_marginTop="7.5dp"
+                android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/menu"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:translationY="50dp">
+
+
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Home"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/addText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:translationX="-1dp"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/moreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="More"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
 
         </LinearLayout>
 

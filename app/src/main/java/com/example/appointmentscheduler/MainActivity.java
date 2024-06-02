@@ -41,52 +41,52 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
         Button viewAllScheds=findViewById(R.id.viewAllSched);
 
-//        viewAllScheds.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, MainActivity4.class);
-//                startActivity(intent);
-//            }
-//        });
+        viewAllScheds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton homeButton = findViewById(R.id.homeButton);
 
-//        homeButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton AddButton = findViewById(R.id.addButton);
-//        AddButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-//                startActivity(intent);
-//            }
-//        });
+        AddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton profileButton = findViewById(R.id.profileButton);
 
-//        profileButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, MainActivity3.class);
-//                startActivity(intent);
-//            }
-//        });
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton menuButton = findViewById(R.id.menuButton);
 
-//        menuButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
-//                startActivity(intent);
-//            }
-//        });
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -140,8 +140,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
                 daysInMonthArray.add(String.valueOf(i - dayOfWeek));
             }
         }
-        return  daysInMonthArray;
-    }
+        return  daysInMonthArray;    }
 
     private String monthYearFromDate(LocalDate date)
     {
