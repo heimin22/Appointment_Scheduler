@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,6 +8,11 @@
     android:orientation="vertical"
     android:background="#F0F0F0"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -22,10 +27,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="Your Schedules"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:gravity="center"
-
             android:fontFamily="@font/inter_semibold"
             android:translationY="17dp">
 
@@ -39,7 +42,7 @@
         android:layout_height="325dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rounded_edge"
         android:elevation="10dp"
         android:padding="5dp">
@@ -68,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:text="prev"
+                    android:text="&#60;"
                     android:textColor="#3572EF"
                     android:textSize="16sp"/>
 
@@ -90,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:text="next"
+                    android:text="&gt;"
                     android:textColor="#3572EF"
                     android:textSize="16sp"
                     android:fontFamily="@font/inter_bold"/>
@@ -190,11 +193,23 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="latest schedule"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:fontFamily="@font/inter_regular"
+        android:translationY="17dp"
+        android:layout_marginBottom="7dp">
+
+    </TextView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_edge"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -263,83 +278,13 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_edge"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:elevation="5dp"
-        android:padding="5dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_name2"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Name"/>
-
-                <TextView
-                    android:id="@+id/tv_time2"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_weight="1"
-                    android:text="00:00">
-                </TextView>
-
-
-            </LinearLayout>
-
-            <TextView
-
-                android:id="@+id/tv_description2"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="35dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:textSize="12dp">
-
-            </TextView>
-
-            <TextView
-
-                android:id="@+id/tv_link2"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="35dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="link"
-                android:textSize="12dp">
-
-            </TextView>
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
     <Button
         android:id="@+id/viewAllSched"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:translationY="60dp"
+        android:layout_gravity="top"
+        android:layout_marginBottom="10dp"
+        android:translationY="20dp"
         android:background="@drawable/rounded_rectangle"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="100dp"
@@ -352,11 +297,14 @@
         />
 
 
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/nav_rectangle"
-        android:translationY="95dp">
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -413,57 +361,57 @@
             android:orientation="horizontal"
             android:translationY="55dp">
 
-        <TextView
-            android:id="@+id/homeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Home"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:fontFamily="@font/inter_regular"
-            android:textSize="12.5sp"
-            />
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Home"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
 
-        <TextView
-            android:id="@+id/addText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Add"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:fontFamily="@font/inter_regular"
-            android:translationX="-1dp"
-            android:textSize="12.5sp"
-            />
+            <TextView
+                android:id="@+id/addText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:translationX="-1dp"
+                android:textSize="12.5sp"
+                />
 
-        <TextView
-            android:id="@+id/profileText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Profile"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:fontFamily="@font/inter_regular"
-            android:textSize="12.5sp"
-            />
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
 
-        <TextView
-            android:id="@+id/moreText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="More"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:fontFamily="@font/inter_regular"
-            android:textSize="12.5sp"
-            />
+            <TextView
+                android:id="@+id/moreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="More"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
