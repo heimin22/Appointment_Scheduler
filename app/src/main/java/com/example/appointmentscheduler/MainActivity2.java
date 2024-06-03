@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -16,6 +17,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
@@ -77,22 +80,73 @@ public class MainActivity2 extends AppCompatActivity {
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialog();
+                dateDialog();
             }
         });
+
+        Button timePicker = findViewById(R.id.timePicker);
+
+        timePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timeDialog();
+            }
+        });
+
+        Button submitSchedButton = findViewById(R.id.submitSchedButton);
+
+        submitSchedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Saved", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 
-    private void openDialog() {
+    private void dateDialog() {
 
         TextView dateText = findViewById(R.id.dateText);
 
         DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                dateText.setText(String.valueOf(year) + "-" + String.valueOf(month + 1) + "-" + String.valueOf(day));
+                String formattedMonth = String.format("%02d", month + 1);
+                String formattedDay = String.format("%02d", day);
+
+                dateText.setText(year + "-" + formattedMonth + "-" + formattedDay);
             }
         }, 2024, 0, 1);
+        dialog.show();
+    }
+
+    private void timeDialog() {
+
+        TextView timeText = findViewById(R.id.timeText);
+
+        TimePickerDialog dialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hours, int minutes) {
+                String amPm;
+                if (hours >= 12) {
+                    amPm = "PM";
+                    if (hours > 12) {
+                        hours -= 12;
+                    }
+                } else {
+                    amPm = "AM";
+                    if (hours == 0) {
+                        hours = 12;
+                    }
+                }
+
+                // Format the minutes to always have two digits
+                String formattedMinutes = String.format("%02d", minutes);
+
+                timeText.setText(String.format("%d:%s %s", hours, formattedMinutes, amPm));
+            }
+        }, 12, 00, false);
         dialog.show();
     }
 

@@ -292,7 +292,7 @@
             android:fontFamily="@font/inter_medium"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
+            android:elevation="30dp"
             />
 
     </LinearLayout>

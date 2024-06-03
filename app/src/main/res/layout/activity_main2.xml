@@ -50,7 +50,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -112,7 +112,7 @@
                     android:layout_marginTop="13dp"
                     android:layout_marginEnd="20dp"
                     android:background="@drawable/rounded_rectangle"
-                    android:fontFamily="@font/inter_regular"
+                    android:fontFamily="@font/inter_medium"
                     android:text="Pick"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF" />
@@ -151,17 +151,30 @@
                 android:background="@drawable/input_layout_background"
                 android:elevation="@dimen/_10sdp">
 
-                <EditText
-                    android:id="@+id/TimeSet"
-                    android:layout_width="312dp"
+                <TextView
+                    android:id="@+id/timeText"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/input_layout_background"
-                    android:ems="15"
-                    android:hint="Time:"
-                    android:inputType="text"
-                    android:textSize="17sp" />
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="HH:MM" />
+
+                <Button
+                    android:id="@+id/timePicker"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="250dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rounded_rectangle"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Pick"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
 
             </RelativeLayout>
 
@@ -211,6 +224,19 @@
                     android:textSize="17sp" />
 
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/submitSchedButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_rectangle"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:elevation="30dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Save Schedule" />
 
         </LinearLayout>
 
