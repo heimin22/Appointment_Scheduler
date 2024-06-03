@@ -201,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="latest schedule"
+            android:text="Latest Schedule"
             android:textSize="16sp"
             android:gravity="center"
             android:fontFamily="@font/inter_regular"
@@ -258,17 +258,17 @@
                     android:layout_marginLeft="35dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Description"
+                    android:text="Description:"
                     android:textSize="12dp"
                     />
 
                 <TextView
                     android:id="@+id/tv_link1"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="link"
+                    android:text="Link:"
                     android:textSize="12dp"
                     />
 
