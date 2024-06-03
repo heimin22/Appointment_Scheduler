@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
@@ -91,18 +92,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
     }
 
-    private void setDefaultFont() {
-        try {
-            final Typeface inter = Typeface.createFromAsset(getAssets(), "fonts/inter_regular.ttf");
-            final Field defaultFontTypefaceField = Typeface.class.getDeclaredField("SERIF");
-            defaultFontTypefaceField.setAccessible(true);
-            defaultFontTypefaceField.set(null, inter);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     private void initWidgets()
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
@@ -114,7 +103,10 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         monthYearText.setText(monthYearFromDate(selectedDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
 
-        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
+        int displayedYear = selectedDate.getYear();
+        int displayedMonth = selectedDate.getMonthValue() - 1;
+
+        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this, displayedYear, displayedMonth);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);

@@ -86,6 +86,7 @@
                         android:layout_weight="2"
                         android:textAlignment="center"
                         android:textSize="18sp"
+                        android:textColor="@color/black"
                         android:text="MONTH YEAR"
                         />
 
