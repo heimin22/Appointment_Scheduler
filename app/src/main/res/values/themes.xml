@@ -3,6 +3,9 @@
     <style name="Base.Theme.AppointmentScheduler" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#BBDEFB</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 
