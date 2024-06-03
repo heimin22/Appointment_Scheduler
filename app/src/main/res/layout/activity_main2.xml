@@ -5,29 +5,17 @@
     android:id="@+id/main_layout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:background="#f0f0f0"
     tools:context=".MainActivity2">
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="69dp" />
-
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/topPanel"
+        android:id="@+id/topNav"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:translationY="@dimen/_minus5sdp"
-        android:layout_marginBottom="850dp"
+        android:layout_marginBottom="10dp"
         app:cardBackgroundColor="#BBDEFB"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cardElevation="5dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -69,22 +57,23 @@
         android:layout_marginBottom="743dp"
         app:cardBackgroundColor="#f8f9fa"
         app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_30sdp"
+        app:cardElevation="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/nameSet"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Name:"
-            android:textColor="#969696"
-            android:textSize="@dimen/_12sdp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout_background"
+            android:ems="15"
+            android:hint="Name:"
+            android:inputType="text"
+            android:textSize="17sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -98,22 +87,22 @@
         android:layout_marginBottom="656dp"
         app:cardBackgroundColor="#f8f9fa"
         app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_30sdp"
+        app:cardElevation="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/dateTime"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/dateSet"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Date: MM-DD-YYYY"
-            android:textColor="#969696"
-            android:textSize="@dimen/_12sdp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout_background"
+            android:ems="15"
+            android:hint="Date:"
+            android:inputType="date" />
 
     </androidx.cardview.widget.CardView>
 
@@ -133,16 +122,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Description:"
-            android:textColor="#969696"
-            android:textSize="@dimen/_12sdp" />
+        <EditText
+            android:id="@+id/descriptionSet"
+            android:layout_width="311dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout_background"
+            android:ems="15"
+            android:hint="Description:"
+            android:inputType="text"
+            android:textSize="17sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -161,16 +151,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/timeSched"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/TimeSet"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Time:"
-            android:textColor="#969696"
-            android:textSize="@dimen/_12sdp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout_background"
+            android:ems="15"
+            android:hint="Time:"
+            android:inputType="text"
+            android:textSize="17sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -189,16 +180,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/links"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/linkSet"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Links:"
-            android:textColor="#969696"
-            android:textSize="@dimen/_12sdp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout_background"
+            android:ems="15"
+            android:hint="Link:"
+            android:inputType="text"
+            android:textSize="17sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -217,113 +209,137 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/notes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Notes:"
-            android:textColor="#969696"
-            android:textSize="@dimen/_12sdp" />
+        <EditText
+            android:id="@+id/noteSet"
+            android:layout_width="311dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_layout_background"
+            android:ems="15"
+            android:hint="Notes:"
+            android:inputType="text"
+            android:textSize="17sp" />
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/navBar"
+    <RelativeLayout
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        app:cardBackgroundColor="#F8F9FA"
-        android:translationY="@dimen/_minus3sdp"
-        app:cardElevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideLine10">
+        android:layout_height="80dp"
+        android:background="@drawable/nav_rectangle"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageButton
-            android:id="@+id/addButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:translationX="@dimen/_105sdp"
-            android:translationY="@dimen/_10sdp"
-            android:backgroundTint="#F8F9FA"
-            android:paddingBottom="10dp"
-            android:src="@drawable/addv2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/homeButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:translationX="@dimen/_30sdp"
-            android:translationY="@dimen/_10sdp"
-            android:backgroundTint="#F8F9FA"
-            android:src="@drawable/homev2" />
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/homev2"
+                />
 
-        <TextView
-            android:id="@+id/homeHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationY="@dimen/_37sdp"
-            android:translationX="@dimen/_34sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Home"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp" />
+            <ImageButton
+                android:id="@+id/addButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/addv2"
+                android:translationY="8dp"
+                />
 
-        <ImageButton
-            android:id="@+id/profileButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:translationY="@dimen/_10sdp"
-            android:translationX="@dimen/_180sdp"
-            android:backgroundTint="#F8F9FA"
-            android:src="@drawable/profilev2" />
+            <ImageButton
+                android:id="@+id/profileButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/profilev2"
+                />
 
-        <TextView
-            android:id="@+id/profileHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationX="@dimen/_183sdp"
-            android:translationY="@dimen/_37sdp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Profile"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp" />
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu"
+                />
 
-        <TextView
-            android:id="@+id/addText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationY="@dimen/_37sdp"
-            android:translationX="@dimen/_111sdp"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="@color/black"
-            android:text="Add"
-            android:textSize="@dimen/_8sdp"/>
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/menuButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/menu"
-            app:srcCompat="@drawable/menu"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_248sdp"
-            android:background="#f8f9fa"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:translationY="55dp">
 
-        <TextView
-            android:id="@+id/menuText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationX="@dimen/_253sdp"
-            android:translationY="@dimen/_37sdp"
-            android:text="Menu"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp" />
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Home"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/addText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:translationX="-1dp"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/moreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="More"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
 
