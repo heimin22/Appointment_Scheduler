@@ -5,6 +5,7 @@ package com.example.appointmentscheduler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -12,7 +13,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
@@ -23,12 +26,6 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        ConstraintLayout main_layout2 = findViewById(R.id.main_layout2);
-        main_layout2.setBackgroundColor(Color.parseColor("#F8F9FA"));
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
 
         setDefaultFont();
 
@@ -74,6 +71,29 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button datePicker = findViewById(R.id.datePicker);
+
+        datePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
+    }
+
+
+    private void openDialog() {
+
+        TextView dateText = findViewById(R.id.dateText);
+
+        DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                dateText.setText(String.valueOf(year) + "-" + String.valueOf(month + 1) + "-" + String.valueOf(day));
+            }
+        }, 2024, 0, 1);
+        dialog.show();
     }
 
 
