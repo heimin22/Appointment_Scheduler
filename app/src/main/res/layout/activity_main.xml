@@ -32,7 +32,7 @@
             android:id="@+id/schedules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Schedules"
+            android:text="Schedule"
             android:fontFamily="@font/inter_bold"
             android:textColor="@color/black"
             android:layout_marginTop="45dp"
