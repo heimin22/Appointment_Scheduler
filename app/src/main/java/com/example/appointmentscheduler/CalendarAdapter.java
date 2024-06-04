@@ -66,7 +66,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.CalendarViewH
         }
         else {
             holder.squareView.setVisibility(View.GONE);
-            holder.dayOfMonth.setTextColor(Color.BLACK);
+            holder.dayOfMonth.setTextColor(Color.WHITE);
         }
 
         holder.dayOfMonth.setText(daysOfMonth.get(position));

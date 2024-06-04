@@ -11,24 +11,43 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/top_nav"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="#BBDEFB"
-        app:cardElevation="5dp"
+        app:cardBackgroundColor="#f0f0f0"
         app:contentPadding="5dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="-20dp"
+            android:id="@+id/your"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your"
+            android:fontFamily="@font/inter_bold"
             android:textColor="@color/black"
-            android:text="Your Schedules"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:fontFamily="@font/inter_semibold"
-            android:translationY="3dp"
-            />
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="18dp"
+            android:textSize="40dp"/>
+
+        <TextView
+            android:id="@+id/schedules"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedules"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="18dp"
+            android:textSize="40dp"/>
+
+        <TextView
+            android:id="@+id/welcomeBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome back!"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/inter_semibold"/>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -46,8 +65,8 @@
             android:layout_height="325dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_edge"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient_background2"
             android:elevation="10dp"
             android:padding="5dp">
 
@@ -75,18 +94,18 @@
                         android:layout_weight="1"
                         android:background="@null"
                         android:text="&#60;"
-                        android:textColor="#3572EF"
+                        android:textColor="#ffffff"
                         android:textSize="16sp"/>
 
                     <TextView
                         android:id="@+id/monthYearTV"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:textAlignment="center"
                         android:textSize="18sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:text="MONTH YEAR"
                         />
 
@@ -99,7 +118,7 @@
                         android:layout_weight="1"
                         android:background="@null"
                         android:text="&gt;"
-                        android:textColor="#3572EF"
+                        android:textColor="#ffffff"
                         android:textSize="16sp"
                         android:fontFamily="@font/inter_bold"
                         />
@@ -120,7 +139,8 @@
                         android:text="SUN"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                     <TextView
@@ -130,7 +150,8 @@
                         android:text="MON"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                     <TextView
@@ -140,7 +161,8 @@
                         android:text="TUE"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                     <TextView
@@ -150,7 +172,8 @@
                         android:text="WED"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                     <TextView
@@ -160,7 +183,8 @@
                         android:text="THU"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                     <TextView
@@ -170,7 +194,8 @@
                         android:text="FRI"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                     <TextView
@@ -180,7 +205,8 @@
                         android:text="SAT"
                         android:textAlignment="center"
                         android:textSize="15sp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/white"
                         />
 
                 </LinearLayout>
@@ -206,7 +232,7 @@
             android:text="Latest Schedule"
             android:textSize="16sp"
             android:gravity="center"
-            android:fontFamily="@font/inter_regular"
+            android:fontFamily="@font/inter_semibold"
             android:translationY="17dp"
             android:layout_marginBottom="7dp"
             />
@@ -214,7 +240,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/rounded_edge"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -285,7 +311,7 @@
             android:layout_gravity="top"
             android:layout_marginBottom="40dp"
             android:translationY="20dp"
-            android:background="@drawable/rounded_rectangle"
+            android:background="@drawable/gradient_background3"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
