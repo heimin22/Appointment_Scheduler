@@ -65,16 +65,6 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        ImageButton backButton = findViewById(R.id.backButton);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
         Button datePicker = findViewById(R.id.datePicker);
 
         datePicker.setOnClickListener(new View.OnClickListener() {
