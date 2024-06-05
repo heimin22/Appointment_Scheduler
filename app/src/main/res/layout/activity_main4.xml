@@ -53,7 +53,7 @@
         android:id="@+id/ba"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#F8F9FA"
+        android:background="#F0f0f0"
         app:layout_constraintTop_toBottomOf="@+id/top_nav"
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
 
