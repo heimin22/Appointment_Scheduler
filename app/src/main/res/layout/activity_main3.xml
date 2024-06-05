@@ -198,22 +198,54 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/schedCounterLayout"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="190dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/profileRelative">
+
+        <RelativeLayout
+            android:id="@+id/schedCounterContainer"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient_background3">
+
+            <TextView
+                android:id="@+id/schedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Schedules"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/schedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="73sp" />
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/finishedSchedContainer"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="240dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="42dp"
+            android:layout_marginStart="50dp"
             android:background="@drawable/gradient_background3">
-
 
             <TextView
                 android:id="@+id/finishedLabel"
@@ -239,46 +271,7 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="170dp">
-
-            <RelativeLayout
-                android:id="@+id/schedCounterContainer"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/gradient_background3">
-
-                <TextView
-                    android:id="@+id/schedLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="29dp"
-                    android:layout_marginTop="23dp"
-                    android:fontFamily="@font/inter_semibold"
-                    android:text="Schedules"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/schedCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="35dp"
-                    android:fontFamily="@font/inter_semibold"
-                    android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="73sp" />
-
-            </RelativeLayout>
-
-
-        </RelativeLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
