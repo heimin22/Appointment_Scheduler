@@ -201,24 +201,24 @@
     <LinearLayout
         android:id="@+id/schedCounterLayout"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="170dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/profileRelative">
 
         <RelativeLayout
             android:id="@+id/schedCounterContainer"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/gradient_background3">
 
             <TextView
                 android:id="@+id/schedLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="29dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="23dp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Schedules"
@@ -229,8 +229,9 @@
                 android:id="@+id/schedCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="35dp"
+                android:layout_below="@id/schedLabel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="0"
                 android:textColor="@color/white"
@@ -240,18 +241,18 @@
 
         <RelativeLayout
             android:id="@+id/finishedSchedContainer"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/gradient_background3">
 
             <TextView
                 android:id="@+id/finishedLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="37dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="23dp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Finished"
@@ -262,14 +263,229 @@
                 android:id="@+id/finishedCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="35dp"
+                android:layout_below="@id/finishedLabel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="73sp" />
 
         </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/schedCounterLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/recentlyFinished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Recently Finished"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/finishedSched1"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/rounded_edge"
+            android:elevation="5dp"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:text="Name" />
+
+                    <TextView
+                        android:id="@+id/tv_time1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="00:00" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_description1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Description:"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_link1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Link:"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/finishedSched2"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_edge"
+            android:elevation="5dp"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:text="Name" />
+
+                    <TextView
+                        android:id="@+id/tv_time2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="00:00" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_description2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Description:"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_link2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Link:"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/finishedSched3"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_edge"
+            android:elevation="5dp"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_name3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:text="Name" />
+
+                    <TextView
+                        android:id="@+id/tv_time3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="00:00" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_description3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Description:"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_link3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Link:"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 
