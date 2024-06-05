@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             }
         });
 
-
         ImageButton AddButton = findViewById(R.id.addButton);
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
