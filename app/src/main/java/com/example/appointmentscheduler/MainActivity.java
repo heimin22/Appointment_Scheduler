@@ -58,15 +58,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             }
         });
 
-        ImageButton homeButton = findViewById(R.id.homeButton);
-
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         ImageButton AddButton = findViewById(R.id.addButton);
         AddButton.setOnClickListener(new View.OnClickListener() {
