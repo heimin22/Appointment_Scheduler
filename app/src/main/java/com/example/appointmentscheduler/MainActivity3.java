@@ -17,6 +17,9 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
+        //no transitions
+        overridePendingTransition(0, 0);
+
         ImageButton homeButton = findViewById(R.id.homeButton);
 
         homeButton.setOnClickListener(new View.OnClickListener() {

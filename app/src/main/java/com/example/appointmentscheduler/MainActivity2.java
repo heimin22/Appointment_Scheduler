@@ -29,9 +29,10 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        //no transitions
+        overridePendingTransition(0, 0);
 
         setDefaultFont();
-
 
         ImageButton menuButton = findViewById(R.id.menuButton);
 

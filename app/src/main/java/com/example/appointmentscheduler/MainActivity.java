@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //no transitions
+        overridePendingTransition(0, 0);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
         Button viewAllScheds=findViewById(R.id.viewAllSched);
 
+
+        /*
         viewAllScheds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
                 startActivity(intent);
             }
         });
-
+*/
     }
 
     private void initWidgets()
@@ -107,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
+
     }
 
     private ArrayList<String> daysInMonthArray(LocalDate date)

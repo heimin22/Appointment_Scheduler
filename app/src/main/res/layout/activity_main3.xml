@@ -60,7 +60,7 @@
                 android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/homev2"
+                android:src="@drawable/home_icon"
                 />
 
 
@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/addv2"
+                android:src="@drawable/add_sched_icon"
                 android:translationY="8dp"
                 />
 
@@ -83,7 +83,7 @@
                 android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/profilev2"
+                android:src="@drawable/profile_icon"
                 />
 
             <ImageButton
@@ -94,7 +94,7 @@
                 android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/menu"
+                android:src="@drawable/more_icon"
                 />
 
         </LinearLayout>
@@ -212,7 +212,8 @@
             android:layout_weight="1"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/gradient_background3">
+            android:background="@drawable/gradient_background3"
+            android:elevation="10dp">
 
             <TextView
                 android:id="@+id/schedLabel"
@@ -246,7 +247,8 @@
             android:layout_weight="1"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/gradient_background3">
+            android:background="@drawable/gradient_background3"
+            android:elevation="10dp">
 
             <TextView
                 android:id="@+id/finishedLabel"

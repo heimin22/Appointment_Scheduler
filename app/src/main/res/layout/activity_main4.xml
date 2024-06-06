@@ -465,12 +465,14 @@
             <ImageButton
                 android:id="@+id/homeButton"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/homev2"
-                android:translationY="7.5dp" />
+                android:src="@drawable/home_icon"
+                />
+
 
             <ImageButton
                 android:id="@+id/addButton"
@@ -479,28 +481,31 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/addv2"
-                android:translationY="8dp" />
+                android:src="@drawable/add_sched_icon"
+                android:translationY="8dp"
+                />
 
             <ImageButton
                 android:id="@+id/profileButton"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/profilev2"
-                android:translationY="7.5dp" />
+                android:src="@drawable/profile_icon"
+                />
 
             <ImageButton
                 android:id="@+id/menuButton"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/menu"
-                android:translationY="7.5dp" />
+                android:src="@drawable/more_icon"
+                />
 
         </LinearLayout>
 
