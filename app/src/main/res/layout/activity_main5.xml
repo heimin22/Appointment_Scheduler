@@ -74,7 +74,7 @@
                         <ImageView
                             android:layout_width="25dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/profile_more">
+                            android:src="@drawable/profile_icon">
 
                         </ImageView>
 
