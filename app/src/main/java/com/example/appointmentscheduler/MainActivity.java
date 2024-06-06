@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         Button viewAllScheds=findViewById(R.id.viewAllSched);
 
 
-        /*
+
         viewAllScheds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
                 startActivity(intent);
             }
         });
-*/
+
     }
 
     private void initWidgets()
