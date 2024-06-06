@@ -196,7 +196,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/homev2"
+                android:src="@drawable/home_icon"
                 android:translationY="7.5dp" />
 
 
@@ -207,7 +207,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/addv2"
+                android:src="@drawable/add_sched_icon"
                 android:translationY="8dp" />
 
             <ImageButton
@@ -217,7 +217,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/profilev2"
+                android:src="@drawable/profile_icon"
                 android:translationY="7.5dp" />
 
             <ImageButton
@@ -227,7 +227,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:src="@drawable/menu"
+                android:src="@drawable/more_icon"
                 android:translationY="7.5dp" />
 
         </LinearLayout>
