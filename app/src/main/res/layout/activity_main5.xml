@@ -46,19 +46,19 @@
         android:layout_height="0dp"
         android:background="#F0f0f0"
         app:layout_constraintTop_toBottomOf="@+id/top_nav"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
-        >
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:paddingTop="0dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -91,6 +91,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/inter_semibold"
                             android:gravity="center"
+                            android:paddingTop="5dp"
                             android:text="Account"
                             android:textColor="#000000"
                             android:textSize="21sp">
@@ -101,6 +102,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:layout_marginStart="1dp"
                             android:fontFamily="@font/inter_regular"
                             android:text="Account Settings, Profile, Sync, Account Security..."
                             android:textColor="#000000"
@@ -115,7 +118,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -149,6 +153,7 @@
                             android:fontFamily="@font/inter_semibold"
                             android:gravity="center"
                             android:text="Settings"
+                            android:paddingTop="5dp"
                             android:textColor="#000000"
                             android:textSize="21sp">
 
@@ -158,6 +163,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:layout_marginStart="1dp"
                             android:fontFamily="@font/inter_regular"
                             android:text="Notification, Theme, Language, Sound and Vibration..."
                             android:textColor="#000000"
