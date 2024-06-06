@@ -11,40 +11,177 @@
         android:id="@+id/top_nav"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:cardBackgroundColor="#f0f0f0"
-        app:contentPadding="5dp">
+        app:contentPadding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/your"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="More"
-            android:fontFamily="@font/inter_bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="0dp"
             android:layout_marginStart="18dp"
-            android:textSize="40dp"/>
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="More"
+            android:textColor="@color/black"
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/welcomeBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Some settings here."
             android:layout_marginStart="19dp"
             android:layout_marginTop="60dp"
-            android:fontFamily="@font/inter_semibold"/>
+            android:fontFamily="@font/inter_semibold"
+            android:text="Some settings here." />
 
 
     </androidx.cardview.widget.CardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F0f0f0"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/stroke"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/profile_more">
+
+                        </ImageView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_semibold"
+                            android:gravity="center"
+                            android:text="Account"
+                            android:textColor="#000000"
+                            android:textSize="21sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Account Settings, Profile, Sync, Account Security..."
+                            android:textColor="#000000"
+                            android:textSize="12sp">
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/stroke"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/settings">
+
+                        </ImageView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_semibold"
+                            android:gravity="center"
+                            android:text="Settings"
+                            android:textColor="#000000"
+                            android:textSize="21sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Notification, Theme, Language, Sound and Vibration..."
+                            android:textColor="#000000"
+                            android:textSize="12sp">
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+            <!--            end here-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
     <RelativeLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/nav_rectangle"
         android:layout_gravity="bottom"
+        android:background="@drawable/nav_rectangle"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
@@ -55,13 +192,12 @@
             <ImageButton
                 android:id="@+id/homeButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:translationY="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/homev2"
-                />
+                android:translationY="7.5dp" />
 
 
             <ImageButton
@@ -72,30 +208,27 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/addv2"
-                android:translationY="8dp"
-                />
+                android:translationY="8dp" />
 
             <ImageButton
                 android:id="@+id/profileButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:translationY="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/profilev2"
-                />
+                android:translationY="7.5dp" />
 
             <ImageButton
                 android:id="@+id/menuButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:translationY="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/menu"
-                />
+                android:translationY="7.5dp" />
 
         </LinearLayout>
 
@@ -110,49 +243,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
                 android:text="Home"
                 android:textColor="#000000"
-                android:gravity="center"
-                android:fontFamily="@font/inter_regular"
-                android:textSize="12.5sp"
-                />
+                android:textSize="12.5sp" />
 
             <TextView
                 android:id="@+id/addText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
                 android:text="Add"
                 android:textColor="#000000"
-                android:gravity="center"
-                android:fontFamily="@font/inter_regular"
-                android:translationX="-1dp"
                 android:textSize="12.5sp"
-                />
+                android:translationX="-1dp" />
 
             <TextView
                 android:id="@+id/profileText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
                 android:text="Profile"
                 android:textColor="#000000"
-                android:gravity="center"
-                android:fontFamily="@font/inter_regular"
-                android:textSize="12.5sp"
-                />
+                android:textSize="12.5sp" />
 
             <TextView
                 android:id="@+id/moreText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
                 android:text="More"
                 android:textColor="#000000"
-                android:gravity="center"
-                android:fontFamily="@font/inter_regular"
-                android:textSize="12.5sp"
-                />
+                android:textSize="12.5sp" />
 
         </LinearLayout>
 
