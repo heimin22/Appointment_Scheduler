@@ -41,20 +41,17 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //no transitions
-        overridePendingTransition(0, 0);
+//        //no transitions
+//        overridePendingTransition(0, 0);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-
 
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
 
         Button viewAllScheds=findViewById(R.id.viewAllSched);
-
-
 
         viewAllScheds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -80,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity3.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -90,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity5.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

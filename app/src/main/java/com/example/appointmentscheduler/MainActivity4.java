@@ -17,8 +17,8 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
-        //no transitions
-        overridePendingTransition(0, 0);
+//        //no transitions
+//        overridePendingTransition(0, 0);
 
         ImageButton homeButton = findViewById(R.id.homeButton);
 
@@ -27,6 +27,7 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity4.this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -37,6 +38,7 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity4.this, MainActivity2.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -47,6 +49,7 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity4.this, MainActivity3.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -57,6 +60,7 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }
