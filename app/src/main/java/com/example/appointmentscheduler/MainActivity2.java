@@ -21,9 +21,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.google.firebase.Firebase;
-import com.google.firebase.database.FirebaseDatabase;
-
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 

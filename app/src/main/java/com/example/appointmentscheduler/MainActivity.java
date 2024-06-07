@@ -24,9 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.lang.reflect.Field;
 import java.time.LocalDate;
 import java.time.YearMonth;
