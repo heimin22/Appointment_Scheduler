@@ -21,8 +21,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-//import com.google.firebase.Firebase;
-//import com.google.firebase.database.FirebaseDatabase;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.lang.reflect.Field;
 import java.sql.Time;
@@ -31,10 +31,14 @@ import java.util.Date;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    private DatabaseHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        dbHelper = new DatabaseHelper(this);
 
 //        //no transitions
 //        overridePendingTransition(0, 0);
@@ -185,7 +189,24 @@ public class MainActivity2 extends AppCompatActivity {
         else {
             // save sa database rito
             // add dito yung database code
-            Toast.makeText(MainActivity2.this, "Saved", Toast.LENGTH_SHORT).show();
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(DatabaseHelper.COLUMN_NAME, schedName);
+            values.put(DatabaseHelper.COLUMN_DATE, schedDate);
+            values.put(DatabaseHelper.COLUMN_DESCRIPTION, schedDesc);
+            values.put(DatabaseHelper.COLUMN_TIME, schedTime);
+            values.put(DatabaseHelper.COLUMN_LINK, schedLink);
+            values.put(DatabaseHelper.COLUMN_NOTES, schedNotes);
+            values.put(DatabaseHelper.COLUMN_USER_FK, "AgnasAyPanget"); //replace it with the actual username tho
+
+            long newRowId = db.insert(DatabaseHelper.TABLE_APPOINTMENTS, null, values);
+
+            if (newRowId != -1) {
+                Toast.makeText(MainActivity2.this, "Saved", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity2.this, "Error saving schedule", Toast.LENGTH_SHORT).show();
+            }
+            db.close();
         }
     }
 }
