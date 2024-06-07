@@ -15,12 +15,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.Firebase;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.lang.reflect.Field;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -32,7 +39,6 @@ public class MainActivity2 extends AppCompatActivity {
 //        //no transitions
 //        overridePendingTransition(0, 0);
 
-        setDefaultFont();
 
         ImageButton menuButton = findViewById(R.id.menuButton);
 
@@ -92,7 +98,7 @@ public class MainActivity2 extends AppCompatActivity {
         submitSchedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity2.this, "Saved", Toast.LENGTH_SHORT).show();
+                addingSchedule();
             }
         });
 
@@ -144,17 +150,42 @@ public class MainActivity2 extends AppCompatActivity {
         dialog.show();
     }
 
+    private void addingSchedule() {
+        // Get the input values
+        EditText inputSchedName = findViewById(R.id.nameSet);
+        EditText inputSchedDesc = findViewById(R.id.descriptionSet);
+        EditText inputSchedLink = findViewById(R.id.linkSet);
+        EditText inputSchedNotes = findViewById(R.id.noteSet);
 
+        TextView inputSchedDate = findViewById(R.id.dateText);
+        TextView inputSchedTime = findViewById(R.id.timeText);
 
-    private void setDefaultFont() {
-        try {
-            final Typeface inter = Typeface.createFromAsset(getAssets(), "fonts/inter_regular.ttf");
-            final Field defaultFontTypefaceField = Typeface.class.getDeclaredField("SERIF");
-            defaultFontTypefaceField.setAccessible(true);
-            defaultFontTypefaceField.set(null, inter);
+        String schedName = inputSchedName.getText().toString();
+        String schedDesc = inputSchedDesc.getText().toString();
+        String schedLink = inputSchedLink.getText().toString();
+        String schedNotes = inputSchedNotes.getText().toString();
+        String schedDate = inputSchedDate.getText().toString();
+        String schedTime = inputSchedTime.getText().toString();
+
+        String errorMessage = "";
+
+        String[] requiredFields = {schedName, schedDate, schedDesc, schedTime};
+        String[] requiredFieldNames = {"Name", "Date", "Description", "Time"};
+
+        for (int i = 0; i < requiredFields.length; i++) {
+            if (requiredFields[i].isEmpty()) {
+                errorMessage += requiredFieldNames[i] + ", ";
+            }
         }
-        catch (Exception e) {
-            e.printStackTrace();
+
+        if (!errorMessage.isEmpty()) {
+            errorMessage = errorMessage.substring(0, errorMessage.length() - 2); // tatanggalin yung last ", "
+            Toast.makeText(MainActivity2.this, "The following fields cannot be empty: " + errorMessage, Toast.LENGTH_SHORT).show();
+        }
+        else {
+            // save sa database rito
+            // add dito yung database code
+            Toast.makeText(MainActivity2.this, "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 }

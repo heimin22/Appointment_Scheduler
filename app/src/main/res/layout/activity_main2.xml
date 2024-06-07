@@ -104,8 +104,8 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/inter_semibold"
-                    android:text="YYYY-MM-DD"
-                    android:textColor="#000000" />
+                    android:hint="YYYY-MM-DD"
+                    android:textColorHint="#000000" />
 
                 <Button
                     android:id="@+id/datePicker"
@@ -162,8 +162,8 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="23dp"
                     android:fontFamily="@font/inter_semibold"
-                    android:text="HH:MM"
-                    android:textColor="#000000" />
+                    android:hint="HH:MM"
+                    android:textColorHint ="#000000" />
 
                 <Button
                     android:id="@+id/timePicker"
@@ -197,7 +197,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/input_layout_background"
                     android:ems="15"
-                    android:hint="Link:"
+                    android:hint="Link: (Optional)"
                     android:inputType="text"
                     android:textSize="17sp" />
 
@@ -222,7 +222,7 @@
                     android:background="@drawable/input_layout_background"
                     android:ems="15"
                     android:gravity="top|start"
-                    android:hint="Notes:"
+                    android:hint="Notes: (Optional)"
                     android:inputType="textMultiLine|text"
                     android:textSize="17sp" />
 
