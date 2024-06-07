@@ -1,4 +1,4 @@
-// PERSONALIZATION SETTINGS
+// SETTINGS
 
 package com.example.appointmentscheduler;
 

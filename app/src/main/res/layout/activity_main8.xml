@@ -23,7 +23,7 @@
             android:layout_marginStart="19dp"
             android:layout_marginTop="0dp"
             android:fontFamily="@font/inter_bold"
-            android:text="Personalization"
+            android:text="Settings"
             android:textColor="@color/black"
             android:textSize="40dp" />
 
@@ -34,7 +34,7 @@
             android:layout_marginStart="19dp"
             android:layout_marginTop="60dp"
             android:fontFamily="@font/inter_semibold"
-            android:text="Personalize your theme." />
+            android:text="Customize your preferences." />
 
 
     </androidx.cardview.widget.CardView>
