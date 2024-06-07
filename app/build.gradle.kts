@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.appointmentscheduler"
-        minSdk = 24
+        minSdk = 26
         compileSdk = 34
         targetSdk = 34
         versionCode = 1

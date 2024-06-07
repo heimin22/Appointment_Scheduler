@@ -1,36 +1,32 @@
 // HOME CLASS
 
 package com.example.appointmentscheduler;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
 
-import java.lang.reflect.Field;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
-
 
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
@@ -39,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
     private static final int RC_NOTIFICATION = 99;
+    private static final int RC_AUDIO_STORAGE= 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
+
 
         Button viewAllScheds=findViewById(R.id.viewAllSched);
 
@@ -97,13 +95,31 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             }
         });
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, RC_NOTIFICATION);
-                    Toast.makeText(this, "Please grant notification permission to receive reminders", Toast.LENGTH_SHORT).show();
-                }
+            requestNotificationPermission();
+        }
+    }
+
+    private void requestNotificationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.POST_NOTIFICATIONS)) {
+                // Show a message explaining why the permission is needed and how to grant it
+                Toast.makeText(this, "Please grant notification permission to receive reminders", Toast.LENGTH_SHORT).show();
             }
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, RC_NOTIFICATION);
+        } else {
+            requestAudioStoragePermission();
+        }
+    }
+
+    private void requestAudioStoragePermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_MEDIA_AUDIO)) {
+                // Show a message explaining why the permission is needed and how to grant it
+                Toast.makeText(this, "Please grant audio storage permission for sound configurations", Toast.LENGTH_SHORT).show();
+            }
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_MEDIA_AUDIO}, RC_AUDIO_STORAGE);
         }
     }
 
@@ -111,12 +127,29 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == RC_NOTIFICATION) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Notifications are allowed", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(this, "Notifications are denied", Toast.LENGTH_SHORT).show();
+
+        if (grantResults.length > 0) {
+            switch (requestCode) {
+                case RC_NOTIFICATION:
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, "Notifications are allowed", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Notifications are denied", Toast.LENGTH_SHORT).show();
+                    }
+                    requestAudioStoragePermission();
+                    break;
+
+                case RC_AUDIO_STORAGE:
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, "Audio storage permission granted", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Audio storage permission denied", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+
+                default:
+                    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                    break;
             }
         }
     }
