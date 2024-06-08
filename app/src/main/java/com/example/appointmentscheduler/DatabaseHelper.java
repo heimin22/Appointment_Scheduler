@@ -1,6 +1,7 @@
 package com.example.appointmentscheduler;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -71,4 +72,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_APPOINTMENT_STATUS);
         onCreate(db);
     }
+
+
+    Cursor readAllSchedule() {
+        String query = "SELECT * FROM " + TABLE_APPOINTMENTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, null);
+
+        }
+        return cursor;
+    }
+
 }

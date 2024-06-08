@@ -203,6 +203,12 @@ public class MainActivity2 extends AppCompatActivity {
 
             if (newRowId != -1) {
                 Toast.makeText(MainActivity2.this, "Saved", Toast.LENGTH_SHORT).show();
+                inputSchedName.setText("");
+                inputSchedDate.setText("");
+                inputSchedTime.setText("");
+                inputSchedDesc.setText("");
+                inputSchedNotes.setText("");
+                inputSchedLink.setText("");
             } else {
                 Toast.makeText(MainActivity2.this, "Error saving schedule", Toast.LENGTH_SHORT).show();
             }
