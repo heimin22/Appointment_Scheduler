@@ -113,18 +113,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             requestNotificationPermission();
         }
 
-//        View view1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_layout, null);
-//        AlertDialog alertDialog = new MaterialAlertDialogBuilder(MainActivity.this).setTitle("Your username").setView(view1).setPositiveButton("Enter", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                SQLiteDatabase db = dbHelper.getWritableDatabase();
-//                ContentValues values = new ContentValues();
-//                values.put(DatabaseHelper.COLUMN_USERNAME, userName);
-//                dialogInterface.dismiss();
-//            }
-//        }).create();
-//        alertDialog.show();
-
         SharedPreferences preferences = getSharedPreferences("app_preferences", MODE_PRIVATE);
         boolean isUserNameDialogShown = preferences.getBoolean("isUserNameDialogShown", false);
 
