@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             requestNotificationPermission();
         }
 
+
         SharedPreferences preferences = getSharedPreferences("app_preferences", MODE_PRIVATE);
         boolean isUserNameDialogShown = preferences.getBoolean("isUserNameDialogShown", false);
 
@@ -125,6 +126,29 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
         View view1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_layout, null);
         final TextInputEditText usernameEditText = view1.findViewById(R.id.usernameSet);
+
+        int maxLength = 10;
+
+        usernameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // No action needed before text change
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() == maxLength) {
+                    Toast.makeText(MainActivity.this, "Character limit reached", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() > maxLength) {
+                    s.delete(maxLength, s.length());
+                }
+            }
+        });
 
         AlertDialog alertDialog = new MaterialAlertDialogBuilder(MainActivity.this)
                 .setTitle("Your username")
