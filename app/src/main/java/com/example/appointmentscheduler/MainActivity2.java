@@ -26,6 +26,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.lang.reflect.Field;
 import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -187,6 +189,25 @@ public class MainActivity2 extends AppCompatActivity {
             Toast.makeText(MainActivity2.this, "The following fields cannot be empty: " + errorMessage, Toast.LENGTH_SHORT).show();
         }
         else {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            try {
+                Date selectedDate = sdf.parse(schedDate);
+                Date currentDate = new Date();
+                if (selectedDate.before(currentDate)) {
+                    Toast.makeText(this, "Selected date cannot be in the past.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Error parsing date", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            dbHelper = new DatabaseHelper(this);
+            String currentUsername = dbHelper.getCurrentUsername();
+
+
             // save sa database rito
             // add dito yung database code
             SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -197,7 +218,7 @@ public class MainActivity2 extends AppCompatActivity {
             values.put(DatabaseHelper.COLUMN_TIME, schedTime);
             values.put(DatabaseHelper.COLUMN_LINK, schedLink);
             values.put(DatabaseHelper.COLUMN_NOTES, schedNotes);
-            values.put(DatabaseHelper.COLUMN_USER_FK, "AgnasAyPanget"); //replace it with the actual username tho
+            values.put(DatabaseHelper.COLUMN_USER_FK, currentUsername); //replace it with the actual username tho
 
             long newRowId = db.insert(DatabaseHelper.TABLE_APPOINTMENTS, null, values);
 

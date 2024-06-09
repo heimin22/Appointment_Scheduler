@@ -1,5 +1,6 @@
 package com.example.appointmentscheduler;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_APPOINTMENT_STATUS = "CREATE TABLE " + TABLE_APPOINTMENT_STATUS + "(" +
             COLUMN_USERNAME + " TEXT, " +
             COLUMN_SCHEDID + " INTEGER, " +
-            COLUMN_IS_FINISHED + " INTEGER, " +
+            COLUMN_IS_FINISHED + " TEXT DEFAULT 'unfinished', " +
             "FOREIGN KEY(" + COLUMN_USERNAME + ") REFERENCES " + TABLE_USERS + "(" + COLUMN_USERNAME + "), " +
             "FOREIGN KEY(" + COLUMN_SCHEDID + ") REFERENCES " + TABLE_APPOINTMENTS + "(" + COLUMN_SCHEDID + "), " +
             "PRIMARY KEY(" + COLUMN_USERNAME + ", " + COLUMN_SCHEDID + "));";
@@ -81,6 +82,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return exists;
     }
+
+    @SuppressLint("Range")
+    public String getCurrentUsername() {
+        String username = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        if (db != null) {
+            Cursor cursor = db.rawQuery("SELECT " + COLUMN_USERNAME + " FROM " + TABLE_USERS, null);
+            if (cursor.moveToFirst()) {
+                username = cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME));
+            }
+            cursor.close();
+        }
+        return username;
+    }
+
+    public String getCurrentSchedCount(String username) {
+        int schedCounts = 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        if (db != null) {
+            Cursor cursor = db.rawQuery("SELECT COUNT(" + COLUMN_SCHEDID + ") FROM " + TABLE_APPOINTMENTS +
+                    " WHERE " + COLUMN_USER_FK + "=?", new String[]{username});
+            if (cursor.moveToFirst()) {
+                schedCounts = cursor.getInt(0);
+            }
+            cursor.close();
+        }
+
+        return String.valueOf(schedCounts);
+    }
+
+
 
     Cursor readAllSchedule() {
         String query = "SELECT * FROM " + TABLE_APPOINTMENTS;

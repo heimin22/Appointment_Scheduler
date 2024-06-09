@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity3 extends AppCompatActivity {
+
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class MainActivity3 extends AppCompatActivity {
 
 //        //no transitions
 //        overridePendingTransition(0, 0);
+
 
         ImageButton homeButton = findViewById(R.id.homeButton);
 
@@ -52,5 +56,36 @@ public class MainActivity3 extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
+
+        getCurrentUserName();
+        getCurrentScheduleCount();
+    }
+
+    private void getCurrentScheduleCount() {
+        dbHelper = new DatabaseHelper(this);
+
+        TextView schedCount = findViewById(R.id.schedCount);
+
+        String currentUsername = dbHelper.getCurrentUsername();
+        String totalSchedCount = dbHelper.getCurrentSchedCount(currentUsername);
+        if (totalSchedCount != null) {
+            schedCount.setText(totalSchedCount);
+        }
+        else {
+            schedCount.setText("0");
+        }
+    }
+
+    private void getCurrentUserName() {
+        dbHelper = new DatabaseHelper(this);
+
+        TextView greetUser = findViewById(R.id.greetUser);
+
+        String username = dbHelper.getCurrentUsername();
+        if (username != null) {
+            greetUser.setText("Hello, " + username + "!");
+        } else {
+            greetUser.setText("Hello!");
+        }
     }
 }
