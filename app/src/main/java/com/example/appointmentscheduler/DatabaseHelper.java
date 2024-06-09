@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Set;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -87,6 +89,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         return exists;
+    }
+
+    public Cursor getLatestSchedule() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            // Get the current date
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String currentDate = dateFormat.format(new Date());
+
+            // Query to get the latest schedule
+            String query = "SELECT * FROM " + TABLE_APPOINTMENTS +
+                    " WHERE " + COLUMN_DATE + " >= ?" +
+                    " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC LIMIT 1";
+
+            cursor = db.rawQuery(query, new String[]{currentDate});
+
+            // Move the cursor to the first row
+            if (cursor != null) {
+                cursor.moveToFirst();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cursor;
     }
 
     @SuppressLint("Range")

@@ -40,9 +40,152 @@
     </androidx.cardview.widget.CardView>
 
 
+    <RelativeLayout
+        android:id="@+id/editUsernameButton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/stroke"
+        android:elevation="10dp"
+        android:paddingTop="@dimen/_3sdp"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:paddingStart="30dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:paddingTop="5dp"
+                    android:text="Notifications"
+                    android:textColor="#000000"
+                    android:textSize="21sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/notifText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:paddingTop="5dp"
+                    android:text="Turn on/off notifications"
+                    android:textColor="#7d7d7d"
+                    android:textSize="12sp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/toggleNotifications"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1">
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical|center"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
+    <RelativeLayout
+        android:id="@+id/changeNotificationTone"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/stroke"
+        android:elevation="10dp"
+        android:paddingTop="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:paddingTop="5dp"
+                    android:text="Select Notification Tone"
+                    android:textColor="#000000"
+                    android:textSize="21sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/changeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:paddingTop="5dp"
+                    android:text="Change your notification tone"
+                    android:textColor="#7d7d7d"
+                    android:textSize="12sp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editUsername"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/bell_outline">
+
+                </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/bottom_nav"

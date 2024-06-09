@@ -65,6 +65,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             android:paddingStart="30dp">
 
@@ -92,11 +94,11 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="1dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/inter_regular"
                     android:paddingTop="5dp"
                     android:text=""
-                    android:textColor="#000000"
-                    android:textSize="15sp">
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="#7d7d7d"
+                    android:textSize="12sp">
 
                 </TextView>
             </LinearLayout>
@@ -105,8 +107,8 @@
                 android:id="@+id/editUsername"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginEnd="20dp"
+                android:layout_weight="1"
                 android:clickable="true">
 
                 <ImageView

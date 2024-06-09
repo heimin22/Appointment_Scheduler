@@ -11,11 +11,13 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
@@ -119,6 +121,8 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         if (!isUserNameDialogShown) {
             gettingUserName();
         }
+
+        getLatestSchedule();
     }
 
     private void gettingUserName() {
@@ -190,6 +194,39 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
 
         alertDialog.show();
+    }
+
+    private void getLatestSchedule() {
+        dbHelper = new DatabaseHelper(this);
+        Cursor cursor = dbHelper.getLatestSchedule();
+
+        TextView timeTextView = findViewById(R.id.timeText);
+        TextView dateTextView = findViewById(R.id.dateText);
+        TextView meetNameTextView = findViewById(R.id.meetnameText);
+        TextView meetDescriptionTextView = findViewById(R.id.meetdescriptionText);
+        TextView meetLinkTextView = findViewById(R.id.meetlinkText);
+
+        if (cursor != null && cursor.getCount() > 0) {
+            // Read schedule details from cursor and update UI
+            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME));
+            @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DATE));
+            @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_TIME));
+            @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DESCRIPTION));
+            @SuppressLint("Range") String link = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_LINK));
+
+            // Update your UI elements with the retrieved data
+            timeTextView.setText(time);
+            dateTextView.setText(date);
+            meetNameTextView.setText(name);
+            meetDescriptionTextView.setText(description);
+            meetLinkTextView.setText(link);
+        } else {
+            timeTextView.setText("");
+            dateTextView.setText("");
+            meetNameTextView.setText("");
+            meetDescriptionTextView.setText("");
+            meetLinkTextView.setText("");
+        }
     }
 
 
@@ -311,6 +348,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         selectedDate = selectedDate.plusMonths(1);
         setMonthView();
     }
+
 
     @Override
     public void onItemClick(int position, String dayText)
