@@ -1,10 +1,13 @@
 package com.example.appointmentscheduler;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.Set;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -31,6 +34,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Columns for AppointmentStatus table
     public static final String COLUMN_IS_FINISHED = "isFinished";
+
+    //user for setting the username
+    public static String USERNAME;
 
     // Create table statements
     private static final String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_USERS + "(" +
@@ -97,6 +103,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return username;
     }
 
+    public void updateUsername(String oldUsername, String newUsername) {
+        SQLiteDatabase db = this.getWritableDatabase(); // Use getWritableDatabase() for updates
+
+        if (db != null) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("Username", newUsername); // Column name should match exactly, case-sensitive
+
+            String whereClause = "Username = ?";
+            String[] whereArgs = new String[] { oldUsername };
+
+            db.update(TABLE_USERS, contentValues, whereClause, whereArgs);
+            db.close(); // Close the database to release resources
+        }
+    }
+
+
+
+//    public void updateUsername(String newUsername, String oldUsername){
+//        SQLiteDatabase db = this.getReadableDatabase();
+//
+//        if (db != null){
+//            String UpdateUsernameQuery = "UPDATE " + TABLE_USERS + " SET " + COLUMN_USERNAME + " = '" + newUsername + "';"''
+//            Cursor cursor;
+//            db.execSQL(UpdateUsernameQuery);
+//            cursor = db.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USERNAME + " = '" + newUsername + "';");
+//        }
+//    }
+
     public String getCurrentSchedCount(String username) {
         int schedCounts = 0;
 
@@ -113,8 +147,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return String.valueOf(schedCounts);
     }
-
-
 
     Cursor readAllSchedule() {
         String query = "SELECT * FROM " + TABLE_APPOINTMENTS;

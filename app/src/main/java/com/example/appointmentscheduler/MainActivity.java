@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         selectedDate = LocalDate.now();
         setMonthView();
 
-
         Button viewAllScheds=findViewById(R.id.viewAllSched);
 
         viewAllScheds.setOnClickListener(new View.OnClickListener() {
@@ -137,16 +136,16 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         alertDialog.setOnShowListener(dialogInterface -> {
             alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(view -> {
                 userName = usernameEditText.getText().toString().trim();
-                if (!userName.isEmpty()) {
-                    if (dbHelper.isUsernameTaken(userName)) {
+                if (!userName.isEmpty()) {  //if not empty
+                    if (dbHelper.isUsernameTaken(userName)) {   //if taken
                         usernameEditText.setError("The username has already been taken");
-                    } else {
+                    } else {    //writes the username
                         SQLiteDatabase db = dbHelper.getWritableDatabase();
                         ContentValues values = new ContentValues();
                         values.put(DatabaseHelper.COLUMN_USERNAME, userName);
                         long result = db.insert(DatabaseHelper.TABLE_USERS, null, values);
 
-                        if (result != -1) {
+                        if (result != -1) { //if saved
                             Toast.makeText(this, "Username saved", Toast.LENGTH_SHORT).show();
                             alertDialog.dismiss();
 
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putBoolean("isUserNameDialogShown", true);
                             editor.apply();
-                        } else {
+                        } else {    //not saved
                             Toast.makeText(this, "Error saving username", Toast.LENGTH_SHORT).show();
                         }
                     }

@@ -21,8 +21,9 @@ public class MainActivity7 extends AppCompatActivity {
         setContentView(R.layout.activity_main7);
 
 
-        ImageButton homeButton = findViewById(R.id.homeButton);
 
+
+        ImageButton homeButton = findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,7 +34,6 @@ public class MainActivity7 extends AppCompatActivity {
         });
 
         ImageButton addButton = findViewById(R.id.addButton);
-
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +44,6 @@ public class MainActivity7 extends AppCompatActivity {
         });
 
         ImageButton profileButton = findViewById(R.id.profileButton);
-
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +54,6 @@ public class MainActivity7 extends AppCompatActivity {
         });
 
         ImageButton menuButton = findViewById(R.id.menuButton);
-
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -12,44 +12,113 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:cardBackgroundColor="#f0f0f0"
-        app:contentPadding="5dp">
+        app:contentPadding="5dp"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/your"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
-            android:fontFamily="@font/inter_bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="0dp"
             android:layout_marginStart="18dp"
-            android:textSize="40dp"/>
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/schedules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
-            android:fontFamily="@font/inter_bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="45dp"
             android:layout_marginStart="18dp"
-            android:textSize="40dp"/>
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Settings"
+            android:textColor="@color/black"
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/welcomeBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit your information or change your profile here."
             android:layout_marginStart="20dp"
             android:layout_marginTop="105dp"
+            android:fontFamily="@font/inter_semibold"
             android:paddingVertical="7dp"
-            android:fontFamily="@font/inter_semibold"/>
+            android:text="Edit your information or change your profile here." />
 
     </androidx.cardview.widget.CardView>
 
+    <!--    needed to be edit: USERNAME     -->
+
+    <RelativeLayout
+        android:id="@+id/editUsernameButton"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/stroke"
+        android:elevation="10dp"
+        android:paddingTop="@dimen/_3sdp"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="30dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:paddingTop="5dp"
+                    android:text="Username"
+                    android:textColor="#000000"
+                    android:textSize="21sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/currentUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingTop="5dp"
+                    android:text="CurrentUsername"
+                    android:textColor="#000000"
+                    android:textSize="15sp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editUsername"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/edit">
+
+                </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/bottom_nav"
@@ -67,13 +136,12 @@
             <ImageButton
                 android:id="@+id/homeButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:translationY="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/home_icon"
-                />
+                android:translationY="7.5dp" />
 
 
             <ImageButton
@@ -84,30 +152,27 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/add_sched_icon"
-                android:translationY="8dp"
-                />
+                android:translationY="8dp" />
 
             <ImageButton
                 android:id="@+id/profileButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:translationY="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/profile_icon"
-                />
+                android:translationY="7.5dp" />
 
             <ImageButton
                 android:id="@+id/menuButton"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:translationY="7.5dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/more_icon"
-                />
+                android:translationY="7.5dp" />
 
         </LinearLayout>
 

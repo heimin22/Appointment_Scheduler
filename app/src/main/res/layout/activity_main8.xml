@@ -36,8 +36,11 @@
             android:fontFamily="@font/inter_semibold"
             android:text="Customize your preferences." />
 
-
     </androidx.cardview.widget.CardView>
+
+
+
+
 
 
     <RelativeLayout
