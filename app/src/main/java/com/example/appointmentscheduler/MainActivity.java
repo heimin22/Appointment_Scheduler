@@ -3,16 +3,25 @@
 package com.example.appointmentscheduler;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,6 +31,9 @@ import android.Manifest;
 
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -36,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private LocalDate selectedDate;
     private static final int RC_NOTIFICATION = 99;
     private static final int RC_AUDIO_STORAGE= 100;
+    private DatabaseHelper dbHelper;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -95,12 +109,80 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             }
         });
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestNotificationPermission();
         }
+
+//        View view1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_layout, null);
+//        AlertDialog alertDialog = new MaterialAlertDialogBuilder(MainActivity.this).setTitle("Your username").setView(view1).setPositiveButton("Enter", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                SQLiteDatabase db = dbHelper.getWritableDatabase();
+//                ContentValues values = new ContentValues();
+//                values.put(DatabaseHelper.COLUMN_USERNAME, userName);
+//                dialogInterface.dismiss();
+//            }
+//        }).create();
+//        alertDialog.show();
+
+        SharedPreferences preferences = getSharedPreferences("app_preferences", MODE_PRIVATE);
+        boolean isUserNameDialogShown = preferences.getBoolean("isUserNameDialogShown", false);
+
+        if (!isUserNameDialogShown) {
+            gettingUserName();
+        }
     }
 
+    private void gettingUserName() {
+        dbHelper = new DatabaseHelper(this);
+
+        View view1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_layout, null);
+        final TextInputEditText usernameEditText = view1.findViewById(R.id.usernameSet);
+
+        AlertDialog alertDialog = new MaterialAlertDialogBuilder(MainActivity.this)
+                .setTitle("Your username")
+                .setView(view1)
+                .setCancelable(false)  // Make the dialog non-cancelable
+                .setPositiveButton("Enter", null)
+                .create();
+
+        alertDialog.setOnShowListener(dialogInterface -> {
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(view -> {
+                userName = usernameEditText.getText().toString().trim();
+                if (!userName.isEmpty()) {
+                    if (dbHelper.isUsernameTaken(userName)) {
+                        usernameEditText.setError("The username has already been taken");
+                    } else {
+                        SQLiteDatabase db = dbHelper.getWritableDatabase();
+                        ContentValues values = new ContentValues();
+                        values.put(DatabaseHelper.COLUMN_USERNAME, userName);
+                        long result = db.insert(DatabaseHelper.TABLE_USERS, null, values);
+
+                        if (result != -1) {
+                            Toast.makeText(this, "Username saved", Toast.LENGTH_SHORT).show();
+                            alertDialog.dismiss();
+
+                            // Set a flag indicating that the dialog has been shown
+                            SharedPreferences preferences = getSharedPreferences("app_preferences", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putBoolean("isUserNameDialogShown", true);
+                            editor.apply();
+                        } else {
+                            Toast.makeText(this, "Error saving username", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                } else {
+                    usernameEditText.setError("Username cannot be empty");
+                }
+            });
+        });
+
+
+        alertDialog.show();
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     private void requestNotificationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.POST_NOTIFICATIONS)) {
@@ -113,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     private void requestAudioStoragePermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_MEDIA_AUDIO)) {
@@ -136,7 +219,9 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
                     } else {
                         Toast.makeText(this, "Notifications are denied", Toast.LENGTH_SHORT).show();
                     }
-                    requestAudioStoragePermission();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        requestAudioStoragePermission();
+                    }
                     break;
 
                 case RC_AUDIO_STORAGE:

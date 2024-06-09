@@ -6,6 +6,18 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">#f0f0f0</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimary">#e82a2a</item>
+        <item name="colorPrimaryVariant">#b21f1f</item>
+        <item name="colorOnPrimary">#F8F9FA</item>
+        <item name="colorSecondary">#233994</item>
+        <item name="colorSecondaryVariant">#1a2a6c</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnBackground">#F0F0F0</item>
+        <item name="colorError">#B00020</item>
+        <item name="colorOnSurface">#000000</item>
+        <item name="colorOnError">#FFFFFF</item>
+
     </style>
 
 
