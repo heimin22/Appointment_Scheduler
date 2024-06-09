@@ -103,33 +103,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return username;
     }
 
-    public void updateUsername(String oldUsername, String newUsername) {
-        SQLiteDatabase db = this.getWritableDatabase(); // Use getWritableDatabase() for updates
 
-        if (db != null) {
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("Username", newUsername); // Column name should match exactly, case-sensitive
-
-            String whereClause = "Username = ?";
-            String[] whereArgs = new String[] { oldUsername };
-
-            db.update(TABLE_USERS, contentValues, whereClause, whereArgs);
-            db.close(); // Close the database to release resources
-        }
+    public boolean updateUserName(String newUsername, String oldUsername) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelper.COLUMN_USERNAME, newUsername);
+        int rowsAffected = db.update(DatabaseHelper.TABLE_USERS, values, DatabaseHelper.COLUMN_USERNAME + " = ?", new String[]{oldUsername});
+        return rowsAffected > 0;
     }
 
-
-
-//    public void updateUsername(String newUsername, String oldUsername){
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//        if (db != null){
-//            String UpdateUsernameQuery = "UPDATE " + TABLE_USERS + " SET " + COLUMN_USERNAME + " = '" + newUsername + "';"''
-//            Cursor cursor;
-//            db.execSQL(UpdateUsernameQuery);
-//            cursor = db.rawQuery("UPDATE " + TABLE_USERS + " SET " + COLUMN_USERNAME + " = '" + newUsername + "';");
-//        }
-//    }
 
     public String getCurrentSchedCount(String username) {
         int schedCounts = 0;

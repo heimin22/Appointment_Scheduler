@@ -8,10 +8,9 @@
         android:id="@+id/editUserNameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="username"
+        android:hint="New username (1-10)"
         android:layout_marginStart="24sp"
-        android:layout_marginEnd="24sp"
-        >
+        android:layout_marginEnd="24sp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
