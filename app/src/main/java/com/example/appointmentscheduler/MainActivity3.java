@@ -3,8 +3,11 @@
 package com.example.appointmentscheduler;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -12,18 +15,19 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity3 extends AppCompatActivity {
 
     private DatabaseHelper dbHelper;
+    RecyclerView finished_recycler;
+    FinishedSchedAdapter finishedAdapter;
+    ArrayList<String> array_name, array_date, array_time, array_desc, array_link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
-//        //no transitions
-//        overridePendingTransition(0, 0);
-
 
         ImageButton homeButton = findViewById(R.id.homeButton);
 
@@ -58,11 +62,47 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
 
-        dbHelper = new DatabaseHelper(this);
+
+        dbHelper = new DatabaseHelper(MainActivity3.this);
 
         getCurrentUserName();
         getCurrentScheduleCount();
         getCurrentFinishedScheduleCount();
+
+        // Playground ni kho
+
+        finished_recycler = findViewById(R.id.finished_sched_recycler);
+        String user_name = dbHelper.getCurrentUsername();
+
+        array_name = new ArrayList<>();
+        array_date = new ArrayList<>();
+        array_time = new ArrayList<>();
+        array_desc = new ArrayList<>();
+        array_link = new ArrayList<>();
+
+        storeFinishedSched(user_name);
+
+        finishedAdapter = new FinishedSchedAdapter(MainActivity3.this, array_name, array_date, array_time, array_desc, array_link);
+        finished_recycler.setLayoutManager(new LinearLayoutManager(MainActivity3.this));
+        finished_recycler.setAdapter(finishedAdapter);
+
+        // Playground ni kho
+
+    }
+
+    void storeFinishedSched(String name) {
+        Cursor cursor = dbHelper.readFinishedSchedule(name);
+        if(cursor.getCount()==0){
+
+        } else {
+            while(cursor.moveToNext()) {
+                array_name.add(cursor.getString(1));
+                array_date.add(cursor.getString(2));
+                array_desc.add(cursor.getString(3));
+                array_time.add(cursor.getString(4));
+                array_link.add(cursor.getString(5));
+            }
+        }
     }
 
     private void getCurrentFinishedScheduleCount() {

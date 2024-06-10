@@ -32,6 +32,7 @@ public class MainActivity4 extends AppCompatActivity {
     TextView empty_sched_txt;
 
 
+
     void storeSchedToArray() {
         Cursor cursor = dbHelper.readAllSchedule();
         if(cursor.getCount()==0) {

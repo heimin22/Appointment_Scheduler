@@ -203,6 +203,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    Cursor readFinishedSchedule(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT A.* FROM " + TABLE_APPOINTMENTS + " A " +
+                "JOIN " + TABLE_APPOINTMENT_STATUS + " S " +
+                "ON A." + COLUMN_SCHEDID + " = S." + COLUMN_SCHEDID + " " +
+                "WHERE S." + COLUMN_USERNAME + " = ? AND S." + COLUMN_IS_FINISHED + " = 1 " +
+                "ORDER BY A." + COLUMN_DATE + " DESC, A." + COLUMN_TIME + " DESC " +
+                "LIMIT 3";
+
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, new String[]{username});
+        }
+        return cursor;
+    }
+
+
     Cursor readAllSchedule() {
         String query = "SELECT * FROM " + TABLE_APPOINTMENTS + " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC";
         SQLiteDatabase db = this.getReadableDatabase();

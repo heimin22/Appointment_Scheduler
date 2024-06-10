@@ -231,8 +231,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             meetDescriptionTextView.setText(description);
             meetLinkTextView.setText(link);
         } else {
-            // gumagawa ng toast na puro nullnullnullnull lumalabas
-//            Toast.makeText(this, name+date+time+description+link, Toast.LENGTH_SHORT).show();
+
             timeTextView.setText("");
             dateTextView.setText("");
             meetNameTextView.setText("");
