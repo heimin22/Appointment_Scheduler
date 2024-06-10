@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -28,6 +29,7 @@ public class UpdateActivity extends AppCompatActivity {
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     Switch edit_switch;
     ImageButton delete_btn;
+    CheckBox isFinishedCheckbox;
     String id, name, date, time, desc, link;
     DatabaseHelper dbHelper;
 
@@ -38,6 +40,7 @@ public class UpdateActivity extends AppCompatActivity {
 //        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_update);
 
+        dbHelper = new DatabaseHelper(UpdateActivity.this);
 
         sched_date_txt = findViewById(R.id.dateText2);
         sched_time_txt = findViewById(R.id.timeText2);
@@ -55,6 +58,8 @@ public class UpdateActivity extends AppCompatActivity {
         save_btn = findViewById(R.id.saveEditSchedButton);
 
         delete_btn = findViewById(R.id.deleteButton);
+
+        isFinishedCheckbox = findViewById(R.id.checkFinish);
 
         //Execute Intent (setting/getting values of clicked schedule)
         getIntentData();
@@ -77,7 +82,6 @@ public class UpdateActivity extends AppCompatActivity {
                     enableEditText(sched_name_txt, sched_desc_txt, sched_link_txt);
                     disableDelete();
                 } else {
-
                     //Disable EditText, Button, Time/Date Picker
                     disableEditText(sched_name_txt, sched_desc_txt, sched_link_txt);
                     disableSave();
@@ -128,14 +132,24 @@ public class UpdateActivity extends AppCompatActivity {
                 time = sched_time_txt.getText().toString();
                 desc = sched_desc_txt.getText().toString();
                 link = sched_link_txt.getText().toString();
+                boolean isFinished = isFinishedCheckbox.isChecked();
 
                 dbHelper.updateSchedule(id, name, date, time, desc, link);
+                dbHelper.updateAppointmentStatus(id, isFinished);
 
                 finish();
             }
         });
 
+        isFinishedCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                dbHelper.updateAppointmentStatus(id, isChecked);
+            }
+        });
+
     }
+
     void getIntentData() {
         if(getIntent().hasExtra("id" ) && getIntent().hasExtra("name" ) &&
                 getIntent().hasExtra("date" ) && getIntent().hasExtra("time" ) &&
@@ -155,6 +169,9 @@ public class UpdateActivity extends AppCompatActivity {
             sched_time_txt.setText(time);
             sched_desc_txt.setText(desc);
             sched_link_txt.setText(link);
+
+            boolean isFinished = dbHelper.isAppointmentFinished(id);
+            isFinishedCheckbox.setChecked(isFinished);
 
         } else {
             Toast.makeText(this, "Error in finding this card view.", Toast.LENGTH_SHORT).show();
@@ -278,6 +295,7 @@ public class UpdateActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dbHelper = new DatabaseHelper(UpdateActivity.this);
                 dbHelper.deleteRowSchedule(id);
+                dbHelper.deleteAppointmentStatus(id);
 
                 finish();
             }

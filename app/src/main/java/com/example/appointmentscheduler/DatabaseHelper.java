@@ -197,6 +197,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void updateAppointmentStatus (String schedID, boolean isFinished) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_SCHEDID, Long.parseLong(schedID));
+        values.put(COLUMN_IS_FINISHED, isFinished ? 1 : 0);
+
+        int rows = db.update(TABLE_APPOINTMENT_STATUS, values, COLUMN_SCHEDID + "=?", new String[]{schedID});
+
+        if (rows == 0) {
+            values.put(COLUMN_USERNAME, getCurrentUsername());
+            db.insert(TABLE_APPOINTMENT_STATUS, null, values);
+        }
+    }
+
+    @SuppressLint("Range")
+    public boolean isAppointmentFinished(String schedID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_APPOINTMENT_STATUS, new String[]{COLUMN_IS_FINISHED}, COLUMN_SCHEDID + "=?", new String[]{schedID}, null, null, null);
+        boolean isFinished = false;
+        if (cursor != null && cursor.moveToFirst()) {
+            isFinished = cursor.getInt(cursor.getColumnIndex(COLUMN_IS_FINISHED)) == 1;
+            cursor.close();
+        }
+        return isFinished;
+    }
+
+    public void deleteAppointmentStatus(String schedID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_APPOINTMENT_STATUS, COLUMN_SCHEDID + "=?", new String[]{schedID});
+    }
+
+
     void deleteRowSchedule(String row_id) {
         SQLiteDatabase db = getWritableDatabase();
         long result = db.delete(TABLE_APPOINTMENTS, "SchedID=? ", new String[]{row_id});
