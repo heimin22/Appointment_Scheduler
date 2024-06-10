@@ -35,8 +35,9 @@ public class UpdateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_update);
+
 
         sched_date_txt = findViewById(R.id.dateText2);
         sched_time_txt = findViewById(R.id.timeText2);

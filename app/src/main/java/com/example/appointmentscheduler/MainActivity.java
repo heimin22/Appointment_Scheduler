@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         setContentView(R.layout.activity_main);
 
 
-        getLatestSchedule();
+//        getLatestSchedule();
 //
 //        overridePendingTransition(0, 0);
 
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             gettingUserName();
         }
 
-        //getLatestSchedule();
+        getLatestSchedule();
     }
 
     private void gettingUserName() {
@@ -209,6 +209,12 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         TextView meetDescriptionTextView = findViewById(R.id.meetdescriptionText);
         TextView meetLinkTextView = findViewById(R.id.meetlinkText);
 
+        name = "";
+        date = "";
+        time = "";
+        description = "";
+        link = "";
+
         if (cursor != null && cursor.moveToFirst()) {
 
             // Read schedule details from cursor and update UI
@@ -225,7 +231,8 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             meetDescriptionTextView.setText(description);
             meetLinkTextView.setText(link);
         } else {
-            Toast.makeText(this, name+date+time+description+link, Toast.LENGTH_SHORT).show();
+            // gumagawa ng toast na puro nullnullnullnull lumalabas
+//            Toast.makeText(this, name+date+time+description+link, Toast.LENGTH_SHORT).show();
             timeTextView.setText("");
             dateTextView.setText("");
             meetNameTextView.setText("");
@@ -240,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.POST_NOTIFICATIONS)) {
                 // Show a message explaining why the permission is needed and how to grant it
-                Toast.makeText(this, "Please grant notification permission to receive reminders", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Please grant notification permission to receive reminders", Toast.LENGTH_SHORT).show();
             }
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, RC_NOTIFICATION);
         } else {
@@ -253,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_MEDIA_AUDIO)) {
                 // Show a message explaining why the permission is needed and how to grant it
-                Toast.makeText(this, "Please grant audio storage permission for sound configurations", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Please grant audio storage permission for sound configurations", Toast.LENGTH_SHORT).show();
             }
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_MEDIA_AUDIO}, RC_AUDIO_STORAGE);
         }

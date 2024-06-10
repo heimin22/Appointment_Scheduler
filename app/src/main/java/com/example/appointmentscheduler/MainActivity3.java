@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -57,21 +58,32 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
 
+        dbHelper = new DatabaseHelper(this);
+
         getCurrentUserName();
         getCurrentScheduleCount();
     }
 
     private void getCurrentScheduleCount() {
-        dbHelper = new DatabaseHelper(this);
-
         TextView schedCount = findViewById(R.id.schedCount);
 
         String currentUsername = dbHelper.getCurrentUsername();
-        String totalSchedCount = dbHelper.getCurrentSchedCount(currentUsername);
-        if (totalSchedCount != null) {
+//        String totalSchedCount = dbHelper.getCurrentSchedCount(currentUsername);
+//        if (totalSchedCount != null) {
+//            schedCount.setText(totalSchedCount);
+//        }
+//        else {
+//            schedCount.setText("0");
+//        }
+
+        Log.d("MainActivity3", "Retrieved current username: " + currentUsername);
+
+        if (currentUsername != null) {
+            String totalSchedCount = dbHelper.getCurrentSchedCount(currentUsername);
+            Log.d("MainActivity3", "Retrieved schedule count: " + totalSchedCount);
             schedCount.setText(totalSchedCount);
-        }
-        else {
+        } else {
+            Log.d("MainActivity3", "Current username is null");
             schedCount.setText("0");
         }
     }

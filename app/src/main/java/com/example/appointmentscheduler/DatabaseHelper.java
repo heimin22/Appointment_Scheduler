@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -31,7 +32,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_DESCRIPTION = "Description";
     public static final String COLUMN_TIME = "Time";
     public static final String COLUMN_LINK = "Link";
-    public static final String COLUMN_NOTES = "Notes";
     public static final String COLUMN_USER_FK = "Username";
 
     // Columns for AppointmentStatus table
@@ -48,7 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COLUMN_DESCRIPTION + " TEXT, " +
             COLUMN_TIME + " TEXT, " +
             COLUMN_LINK + " TEXT, " +
-            COLUMN_NOTES + " TEXT, " +
             COLUMN_USER_FK + " TEXT, " +
             "FOREIGN KEY(" + COLUMN_USER_FK + ") REFERENCES " + TABLE_USERS + "(" + COLUMN_USERNAME + "));";
 
@@ -127,6 +126,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             cursor.close();
         }
+        Log.d("DatabaseHelper", "Current username: " + username);
         return username;
     }
 
@@ -152,9 +152,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             cursor.close();
         }
-
+        Log.d("DatabaseHelper", "Schedule count for user " + username + ": " + schedCounts);
         return String.valueOf(schedCounts);
     }
+
     Cursor readLatestSchedule() {
         String query = "SELECT * FROM " + TABLE_APPOINTMENTS + " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC";
         SQLiteDatabase db = this.getReadableDatabase();
