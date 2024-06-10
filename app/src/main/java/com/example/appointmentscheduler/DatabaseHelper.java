@@ -130,14 +130,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return username;
     }
 
-
     public boolean updateUserName(String newUsername, String oldUsername) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(DatabaseHelper.COLUMN_USERNAME, newUsername);
-        int rowsAffected = db.update(DatabaseHelper.TABLE_USERS, values, DatabaseHelper.COLUMN_USERNAME + " = ?", new String[]{oldUsername});
-        return rowsAffected > 0;
+        db.beginTransaction();
+        try {
+            // Update the username in the Users table
+            ContentValues values = new ContentValues();
+            values.put(DatabaseHelper.COLUMN_USERNAME, newUsername);
+            int rowsAffected = db.update(DatabaseHelper.TABLE_USERS, values, DatabaseHelper.COLUMN_USERNAME + " = ?", new String[]{oldUsername});
+
+            // Update the username in the Appointments table
+            values.clear();
+            values.put(DatabaseHelper.COLUMN_USER_FK, newUsername);
+            rowsAffected += db.update(DatabaseHelper.TABLE_APPOINTMENTS, values, DatabaseHelper.COLUMN_USER_FK + " = ?", new String[]{oldUsername});
+
+            // Update the username in the AppointmentStatus table
+            values.clear();
+            values.put(DatabaseHelper.COLUMN_USERNAME, newUsername);
+            rowsAffected += db.update(DatabaseHelper.TABLE_APPOINTMENT_STATUS, values, DatabaseHelper.COLUMN_USERNAME + " = ?", new String[]{oldUsername});
+
+            db.setTransactionSuccessful();
+            return rowsAffected > 0;
+        } finally {
+            db.endTransaction();
+        }
     }
+
 
     public String getCurrentSchedCount(String username) {
         int schedCounts = 0;
