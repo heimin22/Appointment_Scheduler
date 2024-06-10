@@ -62,19 +62,26 @@ public class MainActivity3 extends AppCompatActivity {
 
         getCurrentUserName();
         getCurrentScheduleCount();
+        getCurrentFinishedScheduleCount();
+    }
+
+    private void getCurrentFinishedScheduleCount() {
+        TextView finishedSchedCount = findViewById(R.id.finishedCount);
+        String currentUsername = dbHelper.getCurrentUsername();
+
+        if (currentUsername != null) {
+            int finishedCount = dbHelper.getFinishedScheduleCount(currentUsername);
+            finishedSchedCount.setText(String.valueOf(finishedCount));
+        }
+        else {
+            finishedSchedCount.setText("0");
+        }
     }
 
     private void getCurrentScheduleCount() {
         TextView schedCount = findViewById(R.id.schedCount);
 
         String currentUsername = dbHelper.getCurrentUsername();
-//        String totalSchedCount = dbHelper.getCurrentSchedCount(currentUsername);
-//        if (totalSchedCount != null) {
-//            schedCount.setText(totalSchedCount);
-//        }
-//        else {
-//            schedCount.setText("0");
-//        }
 
         Log.d("MainActivity3", "Retrieved current username: " + currentUsername);
 

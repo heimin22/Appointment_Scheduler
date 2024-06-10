@@ -80,30 +80,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Cursor getLatestSchedule() {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = null;
-        try {
-            // Get the current date
-            @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            String currentDate = dateFormat.format(new Date());
-
-            // Query to get the latest schedule
-            String query = "SELECT * FROM " + TABLE_APPOINTMENTS +
-                    " WHERE " + COLUMN_DATE + " >= ?" +
-                    " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC LIMIT 1";
-
-            cursor = db.rawQuery(query, new String[]{currentDate});
-
-            // Move the cursor to the first row
-            if (cursor != null) {
-                cursor.moveToFirst();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return cursor;
-    }
+//    public Cursor getLatestSchedule() {
+//        SQLiteDatabase db = getReadableDatabase();
+//        Cursor cursor = null;
+//        try {
+//            // Get the current date
+//            @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            String currentDate = dateFormat.format(new Date());
+//
+//            // Query to get the latest schedule
+//            String query = "SELECT * FROM " + TABLE_APPOINTMENTS +
+//                    " WHERE " + COLUMN_DATE + " >= ?" +
+//                    " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC LIMIT 1";
+//
+//            cursor = db.rawQuery(query, new String[]{currentDate});
+//
+//            // Move the cursor to the first row
+//            if (cursor != null) {
+//                cursor.moveToFirst();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return cursor;
+//    }
 
 
     public boolean isUsernameTaken(String username) {
@@ -154,6 +154,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         Log.d("DatabaseHelper", "Schedule count for user " + username + ": " + schedCounts);
         return String.valueOf(schedCounts);
+    }
+
+    public int getFinishedScheduleCount(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int count = 0;
+
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_APPOINTMENT_STATUS +
+                        " WHERE " + COLUMN_USERNAME + " = ? AND " + COLUMN_IS_FINISHED + " = 1",
+                new String[]{username});
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                count = cursor.getInt(0);
+            }
+            cursor.close();
+        }
+
+        return count;
     }
 
     Cursor readLatestSchedule() {
@@ -228,7 +246,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.delete(TABLE_APPOINTMENT_STATUS, COLUMN_SCHEDID + "=?", new String[]{schedID});
     }
 
-
     void deleteRowSchedule(String row_id) {
         SQLiteDatabase db = getWritableDatabase();
         long result = db.delete(TABLE_APPOINTMENTS, "SchedID=? ", new String[]{row_id});
@@ -240,6 +257,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
-
-
 }
