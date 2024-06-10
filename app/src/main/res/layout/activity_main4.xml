@@ -459,7 +459,6 @@
         android:paddingBottom="100dp"
         >
 
-
     </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
@@ -576,5 +575,32 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/empty_schedule_img"
+        android:visibility="gone"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_nav"
+        android:alpha="0.2"
+        app:srcCompat="@drawable/empty_calendar" />
+
+    <TextView
+        android:id="@+id/empty_message_txt"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.2"
+        android:fontFamily="@font/inter_bold"
+        android:text="Empty Appointments"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/empty_schedule_img"
+        app:layout_constraintStart_toStartOf="@+id/empty_schedule_img"
+        app:layout_constraintTop_toBottomOf="@+id/empty_schedule_img"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

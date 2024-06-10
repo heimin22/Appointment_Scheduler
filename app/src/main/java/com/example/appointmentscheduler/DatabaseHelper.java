@@ -6,10 +6,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Set;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -37,9 +37,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Columns for AppointmentStatus table
     public static final String COLUMN_IS_FINISHED = "isFinished";
 
-    //user for setting the username
-    public static String USERNAME;
-
     // Create table statements
     private static final String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_USERS + "(" +
             COLUMN_USERNAME + " TEXT PRIMARY KEY);";
@@ -58,13 +55,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_APPOINTMENT_STATUS = "CREATE TABLE " + TABLE_APPOINTMENT_STATUS + "(" +
             COLUMN_USERNAME + " TEXT, " +
             COLUMN_SCHEDID + " INTEGER, " +
-            COLUMN_IS_FINISHED + " TEXT DEFAULT 'unfinished', " +
+            COLUMN_IS_FINISHED + " INTEGER, " +
             "FOREIGN KEY(" + COLUMN_USERNAME + ") REFERENCES " + TABLE_USERS + "(" + COLUMN_USERNAME + "), " +
             "FOREIGN KEY(" + COLUMN_SCHEDID + ") REFERENCES " + TABLE_APPOINTMENTS + "(" + COLUMN_SCHEDID + "), " +
             "PRIMARY KEY(" + COLUMN_USERNAME + ", " + COLUMN_SCHEDID + "));";
+    private final Context context;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -82,17 +81,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean isUsernameTaken(String username) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_USERNAME + " = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{username});
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        return exists;
-    }
-
     public Cursor getLatestSchedule() {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = null;
         try {
             // Get the current date
@@ -114,6 +104,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }
         return cursor;
+    }
+
+
+    public boolean isUsernameTaken(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_USERNAME + " = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{username});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
     }
 
     @SuppressLint("Range")
@@ -139,11 +139,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return rowsAffected > 0;
     }
 
-
     public String getCurrentSchedCount(String username) {
         int schedCounts = 0;
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = getReadableDatabase();
 
         if (db != null) {
             Cursor cursor = db.rawQuery("SELECT COUNT(" + COLUMN_SCHEDID + ") FROM " + TABLE_APPOINTMENTS +
@@ -156,17 +155,58 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return String.valueOf(schedCounts);
     }
-
-    Cursor readAllSchedule() {
-        String query = "SELECT * FROM " + TABLE_APPOINTMENTS;
+    Cursor readLatestSchedule() {
+        String query = "SELECT * FROM " + TABLE_APPOINTMENTS + " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
-        if(db != null) {
+        if (db != null) {
             cursor = db.rawQuery(query, null);
-
         }
         return cursor;
     }
+
+    Cursor readAllSchedule() {
+        String query = "SELECT * FROM " + TABLE_APPOINTMENTS + " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    void updateSchedule(String row_id, String name, String date, String time, String desc, String link) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NAME, name);
+        cv.put(COLUMN_DATE, date);
+        cv.put(COLUMN_TIME, time);
+        cv.put(COLUMN_DESCRIPTION, desc);
+        cv.put(COLUMN_LINK, link);
+
+        long result = db.update(TABLE_APPOINTMENTS, cv, "SchedID=? ", new String[]{row_id});
+
+        if(result==-1) {
+
+            Toast.makeText(context, "Error: Failed to save schedule.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Schedule updated successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void deleteRowSchedule(String row_id) {
+        SQLiteDatabase db = getWritableDatabase();
+        long result = db.delete(TABLE_APPOINTMENTS, "SchedID=? ", new String[]{row_id});
+
+        if(result==-1) {
+            Toast.makeText(context, "Error: Failed to delete schedule.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Schedule deleted successfully!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 
 }

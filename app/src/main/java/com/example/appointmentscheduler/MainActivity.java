@@ -23,6 +23,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private static final int RC_AUDIO_STORAGE= 100;
     private DatabaseHelper dbHelper;
     private String userName;
+    private String name, time, date, description, link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         setContentView(R.layout.activity_main);
 
 
-//        //no transitions
+        getLatestSchedule();
+//
 //        overridePendingTransition(0, 0);
 
         initWidgets();
@@ -122,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             gettingUserName();
         }
 
-        getLatestSchedule();
+        //getLatestSchedule();
     }
 
     private void gettingUserName() {
@@ -198,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
     private void getLatestSchedule() {
         dbHelper = new DatabaseHelper(this);
-        Cursor cursor = dbHelper.getLatestSchedule();
+        Cursor cursor = dbHelper.readLatestSchedule();
 
         TextView timeTextView = findViewById(R.id.timeText);
         TextView dateTextView = findViewById(R.id.dateText);
@@ -206,13 +209,14 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         TextView meetDescriptionTextView = findViewById(R.id.meetdescriptionText);
         TextView meetLinkTextView = findViewById(R.id.meetlinkText);
 
-        if (cursor != null && cursor.getCount() > 0) {
+        if (cursor != null && cursor.moveToFirst()) {
+
             // Read schedule details from cursor and update UI
-            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME));
-            @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DATE));
-            @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_TIME));
-            @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DESCRIPTION));
-            @SuppressLint("Range") String link = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_LINK));
+            name = cursor.getString(1); //column name
+            date = cursor.getString(2); //column date
+            time = cursor.getString(4); //column time
+            description = cursor.getString(3); //column description
+            link = cursor.getString(5); //column link
 
             // Update your UI elements with the retrieved data
             timeTextView.setText(time);
@@ -221,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             meetDescriptionTextView.setText(description);
             meetLinkTextView.setText(link);
         } else {
+            Toast.makeText(this, name+date+time+description+link, Toast.LENGTH_SHORT).show();
             timeTextView.setText("");
             dateTextView.setText("");
             meetNameTextView.setText("");
