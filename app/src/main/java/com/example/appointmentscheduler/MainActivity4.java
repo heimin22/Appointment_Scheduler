@@ -26,6 +26,7 @@ public class MainActivity4 extends AppCompatActivity {
 
     DatabaseHelper dbHelper;
     ArrayList<String> array_id, array_name, array_description, array_date, array_time, array_link;
+    ArrayList<Boolean> array_isFinished;
     ScheduleAdapter meetingAdapter;
     RecyclerView recyclerView;
     ImageView empty_sched_img;
@@ -52,9 +53,11 @@ public class MainActivity4 extends AppCompatActivity {
                 array_description.add(cursor.getString(3));
                 array_time.add(cursor.getString(4));
                 array_link.add(cursor.getString(5));
+                array_isFinished.add(cursor.getInt(7) ==1); //added
 
             }
         }
+        cursor.close();
     }
 
     @Override
@@ -73,10 +76,11 @@ public class MainActivity4 extends AppCompatActivity {
         array_date = new ArrayList<>();
         array_time = new ArrayList<>();
         array_link = new ArrayList<>();
+        array_isFinished = new ArrayList<>();
 
         storeSchedToArray();
 
-        meetingAdapter = new ScheduleAdapter(MainActivity4.this, this, array_id, array_name,array_date,array_time,array_description,array_link);
+        meetingAdapter = new ScheduleAdapter(MainActivity4.this, this, array_id, array_name,array_date,array_time,array_description,array_link, array_isFinished);
         recyclerView.setAdapter(meetingAdapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity4.this));

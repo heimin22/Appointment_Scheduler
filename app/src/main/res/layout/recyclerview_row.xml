@@ -29,6 +29,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/check_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/check_off"
+                android:scaleY=".7"
+                android:scaleX=".7"
+                android:translationX="6dp"
+                android:translationY="6dp"
+                tools:ignore="MissingConstraints" />
+
+            
+            
             <TextView
                 android:id="@+id/time_tv"
                 android:layout_width="wrap_content"
@@ -64,7 +78,7 @@
                 android:text="Scheduled Cellophane Meeting #2"
                 android:textColor="@color/black"
                 android:fontFamily="@font/inter_semibold"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:translationX="55dp"
                 android:translationY="-20dp"
