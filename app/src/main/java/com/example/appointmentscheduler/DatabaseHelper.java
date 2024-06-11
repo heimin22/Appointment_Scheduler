@@ -193,7 +193,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     Cursor readLatestSchedule() {
-        String query = "SELECT * FROM " + TABLE_APPOINTMENTS + " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC";
+        String query = "SELECT a.* " +
+                "FROM " + TABLE_APPOINTMENTS + " a " +
+                "JOIN " + TABLE_APPOINTMENT_STATUS + " s " +
+                "ON a." + COLUMN_SCHEDID + " = s." + COLUMN_SCHEDID + " " +
+                "WHERE s." + COLUMN_IS_FINISHED + " = 0 " +
+                "ORDER BY a." + COLUMN_DATE + " ASC, a." + COLUMN_TIME + " ASC " +
+                "LIMIT 1";
+//        String query = "SELECT * FROM " + TABLE_APPOINTMENTS + " ORDER BY " + COLUMN_DATE + " ASC, " + COLUMN_TIME + " ASC";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;

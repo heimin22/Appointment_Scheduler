@@ -231,7 +231,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             meetDescriptionTextView.setText(description);
             meetLinkTextView.setText(link);
         } else {
-
             timeTextView.setText("");
             dateTextView.setText("");
             meetNameTextView.setText("");
