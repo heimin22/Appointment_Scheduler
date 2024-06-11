@@ -91,20 +91,21 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/toggleNotifications"
+                android:id="@+id/toggleDarkMode"
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1">
 
                 <Switch
-                    android:id="@+id/toggleNotif"
+                    android:id="@+id/toggleDark"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical|center"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="UseSwitchCompatOrMaterialXml"/>
 
             </LinearLayout>
         </LinearLayout>
