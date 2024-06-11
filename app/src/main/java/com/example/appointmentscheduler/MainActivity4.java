@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -34,6 +35,7 @@ public class MainActivity4 extends AppCompatActivity {
 
 
 
+    @SuppressLint("Range")
     void storeSchedToArray() {
         Cursor cursor = dbHelper.readAllSchedule();
         if(cursor.getCount()==0) {
@@ -47,13 +49,20 @@ public class MainActivity4 extends AppCompatActivity {
         }
         else {
             while(cursor.moveToNext()) {
-                array_id.add(cursor.getString(0));
-                array_name.add(cursor.getString(1));
-                array_date.add(cursor.getString(2));
-                array_description.add(cursor.getString(3));
-                array_time.add(cursor.getString(4));
-                array_link.add(cursor.getString(5));
-                array_isFinished.add(cursor.getInt(7) ==1); //added
+                array_id.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_SCHEDID)));
+                array_name.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME)));
+                array_date.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DATE)));
+                array_description.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DESCRIPTION)));
+                array_time.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_TIME)));
+                array_link.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_LINK)));
+                array_isFinished.add(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COLUMN_IS_FINISHED)) == 1);
+//                array_id.add(cursor.getString(0));
+//                array_name.add(cursor.getString(1));
+//                array_date.add(cursor.getString(2));
+//                array_description.add(cursor.getString(3));
+//                array_time.add(cursor.getString(4));
+//                array_link.add(cursor.getString(5));
+//                array_isFinished.add(cursor.getInt(7) ==1); //added
 
             }
         }

@@ -229,7 +229,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     Cursor readAllSchedule() {
         String query = "SELECT A.*, S." + COLUMN_IS_FINISHED + " FROM " + TABLE_APPOINTMENTS + " A " +
-                "LEFT JOIN " + TABLE_APPOINTMENT_STATUS + " S ON A." + COLUMN_SCHEDID + " = S." + COLUMN_SCHEDID +
+                "JOIN " + TABLE_APPOINTMENT_STATUS + " S ON A." + COLUMN_SCHEDID + " = S." + COLUMN_SCHEDID +
                 " ORDER BY A." + COLUMN_DATE + " ASC, A." + COLUMN_TIME + " ASC";
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery(query, null);

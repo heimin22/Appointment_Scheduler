@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +61,6 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         String desc = schedDesc.get(position);
         String link = schedLink.get(position);
         Boolean finished = schedIsFinish.get(position);
-
         holder.schedNameTxt.setText(name);
         holder.schedDateTxt.setText(date);
         holder.schedTimeTxt.setText(time);
@@ -69,6 +69,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
 
 //        Debugging purposes
 //        Toast.makeText(context, "SchedID: "+id + "SchedStatus: " + finished, Toast.LENGTH_SHORT ).show();
+
+        Log.d("ScheduleAdapter", "Position: " + position + ", Finished: " + finished);
 
         if (finished) {
             holder.checkImg.setVisibility(View.VISIBLE);
