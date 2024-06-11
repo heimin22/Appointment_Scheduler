@@ -67,16 +67,16 @@ public class MainActivity5 extends AppCompatActivity {
             }
         });
 
-        RelativeLayout settingsButtonMore = findViewById(R.id.settings);
-
-        settingsButtonMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity5.this, MainActivity8.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-
-            }
-        });
+//        RelativeLayout settingsButtonMore = findViewById(R.id.settings);
+//
+//        settingsButtonMore.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity5.this, MainActivity8.class);
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+//
+//            }
+//        });
     }
 }
