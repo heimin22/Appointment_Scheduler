@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userNameSetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your username (1-10)"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/black"
+            android:id="@+id/usernameSet"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</RelativeLayout>

@@ -4,6 +4,308 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F0F0"
     tools:context=".MainActivity3">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_nav"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="#f0f0f0"
+        app:contentPadding="5dp">
+
+        <TextView
+            android:id="@+id/your"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/welcomeBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="View your profile here." />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/nav_rectangle"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_icon"
+                />
+
+
+            <ImageButton
+                android:id="@+id/addButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/add_sched_icon"
+                android:translationY="8dp"
+                />
+
+            <ImageButton
+                android:id="@+id/profileButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/profile_icon"
+                />
+
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:translationY="7.5dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/more_icon"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:translationY="55dp">
+
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Home"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/addText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:translationX="-1dp"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+            <TextView
+                android:id="@+id/moreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="More"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12.5sp"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profileRelative"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/top_nav">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="40dp"
+            app:srcCompat="@drawable/profile_picture_placeholder" />
+
+        <TextView
+            android:id="@+id/greetUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, User!"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="25sp"
+            android:layout_marginTop="43dp"
+            android:layout_marginStart="160dp" />
+
+        <TextView
+            android:id="@+id/greetUser2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="How are you right now?"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/schedCounterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/profileRelative">
+
+        <RelativeLayout
+            android:id="@+id/schedCounterContainer"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/gradient_background3"
+            android:elevation="10dp">
+
+            <TextView
+                android:id="@+id/schedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Schedules"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/schedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/schedLabel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="73sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/finishedSchedContainer"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/gradient_background3"
+            android:elevation="10dp">
+
+            <TextView
+                android:id="@+id/finishedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Finished"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/finishedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/finishedLabel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="73sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/schedCounterLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/recentlyFinished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Recently Finished"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/finished_sched_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
